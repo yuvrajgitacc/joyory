@@ -81,38 +81,94 @@ class VisionAgent:
 
     def check_ood(self, pil_image: Image.Image) -> Tuple[bool, str]:
         """
-        Out-Of-Distribution (OOD) Gate.
-        Rejects non-skin images (walls, pets, cars, blank screens, documents).
+        Two-Tier Out-Of-Distribution (OOD) Quality & Safety Gate:
+        Tier 1: Fast local multispectral & biological skin check (zero cost, catches plants, leaves, blue objects, blank screens).
+        Tier 2: Semantic AI quality inspection (catches animals, food, documents, cartoons, furniture).
         """
         img_rgb = np.array(pil_image.convert("RGB"))
         h, w, _ = img_rgb.shape
 
         # 1. Dimension check
-        if h < 150 or w < 150:
-            return False, "Image resolution too low for clinical AI skin analysis (minimum 150x150 required)."
+        if h < 120 or w < 120:
+            return False, "Image resolution too low for clinical AI skin analysis (minimum 120x120 required)."
 
-        # 2. Flat / Blank image check
-        std_color = np.std(img_rgb)
-        if std_color < 12.0:
-            return False, "Image lacks color variation (blank/uniform background or screen detected)."
-
-        # 3. YCrCb Skin Chrominance Gate
         r = img_rgb[..., 0].astype(np.float32)
         g = img_rgb[..., 1].astype(np.float32)
         b = img_rgb[..., 2].astype(np.float32)
+        total_pixels = float(h * w)
 
+        # 2. Flat / Blank image check (uniform surface, paper, screen)
+        std_color = float(np.std(img_rgb))
+        if std_color < 12.0:
+            return False, "Image lacks color and textural variation (blank screen, paper, or uniform surface detected)."
+
+        # 3. Plant foliage & Chlorophyll check (detects leaves, crops, grass, vegetation)
+        green_dom = (g >= r * 0.90) & (g > b * 1.10) & (g > 30)
+        green_ratio = float(np.count_nonzero(green_dom)) / total_pixels
+        if green_ratio > 0.12:
+            return False, f"Out-of-Distribution: Plant foliage, leaf or agricultural subject detected ({green_ratio*100:.1f}% green area). Please upload a human facial or skin photo."
+
+        # 4. Non-biological cool blue/cyan check (sky, water, synthetic objects)
+        blue_dom = (b > r * 1.10) & (b > g * 1.05) & (b > 60)
+        blue_ratio = float(np.count_nonzero(blue_dom)) / total_pixels
+        if blue_ratio > 0.25:
+            return False, f"Out-of-Distribution: Non-biological cool blue tones detected ({blue_ratio*100:.1f}%). Please upload a human skin photo."
+
+        # 5. Biological human skin chrominance (R > G > B across all human skin types)
+        bio_skin = (r > g) & (g > b) & ((r - g) >= 8) & ((g - b) >= 3)
+        bio_ratio = float(np.count_nonzero(bio_skin)) / total_pixels
+
+        # YCrCb strict digital dermatology locus
         y = 0.299 * r + 0.587 * g + 0.114 * b
         cr = (r - y) * 0.713 + 128.0
         cb = (b - y) * 0.564 + 128.0
+        strict_skin = (cr >= 133) & (cr <= 178) & (cb >= 80) & (cb <= 132) & (y >= 45) & (r > g)
+        strict_ratio = float(np.count_nonzero(strict_skin)) / total_pixels
 
-        # Biological skin locus across Fitzpatrick types I-VI
-        skin_mask = (cr >= 130) & (cr <= 180) & (cb >= 75) & (cb <= 135) & (y >= 40)
-        skin_ratio = float(np.count_nonzero(skin_mask)) / float(h * w)
+        if strict_ratio < 0.35 and bio_ratio < 0.40:
+            return False, f"Out-of-Distribution: No human facial skin detected (Biological skin coverage is only {bio_ratio*100:.1f}%, minimum 40% required)."
 
-        if skin_ratio < 0.18:
-            return False, f"Out-of-Distribution: No human facial skin detected (skin coverage {skin_ratio*100:.1f}% below minimum 18% requirement)."
+        # Tier 2: Deep Semantic AI Check (if API key available)
+        if GEMINI_API_KEY:
+            try:
+                from google import genai
+                from google.genai import types
 
-        return True, "Valid skin scan"
+                client = genai.Client(api_key=GEMINI_API_KEY)
+                buf = io.BytesIO()
+                pil_image.save(buf, format="JPEG")
+                img_bytes = buf.getvalue()
+
+                prompt = (
+                    "You are a strict Skincare Quality Inspector.\n"
+                    "Determine whether this image is a photo of real human skin (face, cheek, forehead, chin, nose, neck, or close-up human skin patch) OR if it is Out-of-Distribution (such as a plant, leaf, crop disease, animal, pet, food, inanimate object, car, document, illustration, or landscape).\n"
+                    "Respond ONLY with a JSON object: {\"is_human_skin\": true or false, \"detected_subject\": \"brief description of subject\", \"reason\": \"explanation\"}"
+                )
+
+                resp = client.models.generate_content(
+                    model="gemini-3.1-flash-lite",
+                    contents=[
+                        types.Part.from_bytes(data=img_bytes, mime_type="image/jpeg"),
+                        prompt
+                    ],
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                        temperature=0.1,
+                        max_output_tokens=300
+                    )
+                )
+
+                data = json.loads(resp.text)
+                is_skin = data.get("is_human_skin", True)
+                subject = data.get("detected_subject", "unknown object")
+
+                if not is_skin:
+                    return False, f"Out-of-Distribution: {subject.title()} detected instead of human facial skin. Please upload a clear photo of your skin or face."
+            except Exception as e:
+                logger.debug(f"Tier 2 semantic check bypassed: {e}")
+
+        return True, "Valid human skin scan"
+
 
     def extract_skin_tone(self, pil_image: Image.Image) -> Dict[str, Any]:
         """
