@@ -11,4 +11,8 @@ pydantic>=2.7.0
 python-dotenv>=1.0.0
 requests
 openai>=1.0.0
+# ML audit additions (also pinned in root pyproject.toml for `uv sync`)
+torch>=2.2.0
+torchvision>=0.17.0
+huggingface-hub>=0.23.0
 
