@@ -6,6 +6,7 @@
 !.env.example
 
 # Python & Virtual Environments
+.venv/
 venv/
 backend/venv/
 env/
@@ -45,3 +46,9 @@ temp_tone_eval.jpg
 backend/temp_tone_eval.jpg
 *.tmp
 *.log
+
+# Local ML eval reports & large local-only weights
+backend/eval_reports/
+backend/models/derm_*.onnx
+backend/models/*.pt
+*.onnx.data
