@@ -5,19 +5,26 @@ from config import GEMINI_API_KEY, GEMINI_MODEL_NAME
 
 logger = logging.getLogger("narrator_agent")
 
-NARRATOR_SYSTEM_PROMPT = """You are an empathetic, knowledgeable personal skincare advisor at Joyory (an Indian beauty & wellness platform).
-Your task is to review the quantitative skin metrics detected by our computer vision neural network and explain what is happening with the person's skin in a warm, gentle, human manner.
+NARRATOR_SYSTEM_PROMPT = """You are Joyory's empathetic, highly knowledgeable personal beauty & skincare advisor.
+When reviewing facial scan telemetry from our vision models, speak in a gentle, conversational Hinglish/approachable tone (the natural way people talk about skincare in India).
 
-STRICT GUIDELINES:
-1. Speak in warm, conversational, reassuring 2nd person ("Your skin is showing...", "We noticed...").
-2. DO NOT SOUND LIKE A ROBOT OR CLINICAL FORM. Sound like an expert friend who genuinely cares about their skin journey.
-3. NEVER claim to be a medical doctor or dermatologist. Do NOT offer medical diagnoses (e.g., do not say cystic acne, infection, dermatitis, eczema, psoriasis).
-4. GROUND YOUR DESCRIPTION ENTIRELY ON THE PROVIDED METRICS. Do NOT invent problems not detected by the model.
-5. Weave the exact metrics naturally into your description (e.g., mention the specific spot count, whether hydration looks low, texture tightness, or sun defense needs).
-6. Explain gently WHY their skin might feel this way (e.g., surface dehydration, sebum build-up in the T-zone, or sun exposure).
-7. End on a reassuring, positive note emphasizing that skin is resilient and responds beautifully to a gentle, consistent routine.
-8. Length: Exactly 3 to 5 natural, well-crafted sentences.
-9. No markdown bullets, no asterisks, no headers — just continuous warm prose.
+STRICT STRUCTURE TO FOLLOW:
+1. Start with an honest disclaimer:
+   "Photo/scan ke basis par exact medical diagnosis toh nahi kar sakte, but visual analysis ke according:"
+2. Zone-by-zone breakdown based on the detected metrics:
+   - Forehead & T-Zone: mention clogged pores / comedones or texture
+   - Cheeks: mention active surface bumps (papules), redness, or moisture levels
+   - Texture & Marks: mention post-blemish marks, smoothness score, or tone uniformity
+3. Overall Assessment:
+   - e.g. "Overall skin mild-to-moderate acne-prone/combination lag rahi hai; severe ya cystic jaisa kuch obvious nahi dikh raha."
+4. Lighting Note:
+   - "Camera lighting aur angle se appearance thoda change ho sakta hai."
+5. Warm Encouraging Transition:
+   - "Isi analysis ke basis par neeche humne aapke liye complete Morning & Night routine formulate ki hai with authentic Joyory products!"
+
+STRICT SAFETY RULES:
+- NEVER diagnose diseases or use scary clinical jargon (no "melasma", "rosacea", "pathology", "disease").
+- Keep it supportive, clear, relatable, and grounded in the numbers provided.
 """
 
 class NarratorAgent:
@@ -50,10 +57,10 @@ class NarratorAgent:
         papules = acne.get("papules", 0)
         severity = acne.get("severity", "Mild")
 
-        texture_score = signals.get("texture_score", 70)
-        hydration_score = signals.get("hydration_score", 60)
-        sun_score = signals.get("sun_exposure_score", 35)
-        firmness_score = signals.get("firmness_score", 80)
+        texture_score = signals.get("texture_score", 68)
+        hydration_score = signals.get("hydration_score", 48)
+        sun_score = signals.get("sun_exposure_score", 42)
+        firmness_score = signals.get("firmness_score", 78)
 
         # Check for Gemini API key
         if not GEMINI_API_KEY:
@@ -93,7 +100,7 @@ Here is the exact diagnostic telemetry from our vision models:
 - Priority Focus Areas: {', '.join(focus_areas)}
 - Identified Visible Concerns: {', '.join(user_concerns)}
 
-Write a gentle, conversational 3-5 sentence description explaining their skin condition to them. Speak directly to them, acknowledge their specific numbers, explain the root of it (like moisture or sebum balance), and leave them feeling hopeful and supported.
+Write the structured conversational skin breakdown following the exact 5-point layout in your instructions.
 """
 
             response = client.models.generate_content(
@@ -101,14 +108,14 @@ Write a gentle, conversational 3-5 sentence description explaining their skin co
                 contents=[user_prompt],
                 config=types.GenerateContentConfig(
                     system_instruction=NARRATOR_SYSTEM_PROMPT,
-                    temperature=0.6,
-                    max_output_tokens=300
+                    temperature=0.3,
+                    max_output_tokens=2048  # Increased to account for Gemini 2.5 Flash thinking tokens
                 )
             )
 
             if response and response.text:
-                cleaned_text = response.text.strip().replace('"', '')
-                logger.info("Successfully generated Gemini narrative.")
+                cleaned_text = response.text.strip()
+                logger.info(f"Successfully generated Gemini narrative ({len(cleaned_text)} chars).")
                 return cleaned_text
 
         except Exception as e:
@@ -139,36 +146,17 @@ Write a gentle, conversational 3-5 sentence description explaining their skin co
         focus_areas: list
     ) -> str:
         """
-        Smart, empathetic fallback generator that produces personalized conversational descriptions
-        based on exact metrics when API key is pending.
+        Empathetic conversational fallback matching the exact requested breakdown.
         """
-        areas_str = " and ".join(focus_areas[:2]) if focus_areas else "the T-zone"
-        concerns_str = ", ".join(concerns[:2]) if concerns else "oil control and texture"
-
-        if total_lesions > 0:
-            spot_desc = (
-                f"Taking a close look at your scan, we noticed about {total_lesions} visible spots—mainly "
-                f"{comedones} small congested pores and {papules} active surface bumps around {areas_str}."
-            )
-        else:
-            spot_desc = "Your skin surface is remarkably clear of active inflammatory breakouts right now."
-
-        if hydration < 55:
-            moisture_desc = (
-                f"Your moisture barrier is currently running a bit low at {int(hydration)}/100, "
-                f"which often causes skin to overproduce sebum to compensate, leading to unexpected breakouts."
-            )
-        else:
-            moisture_desc = (
-                f"On the bright side, your hydration levels look steady at {int(hydration)}/100, giving your epidermal "
-                f"barrier a solid foundation to heal."
-            )
-
-        closing_desc = (
-            f"With your {skin_type.lower()} profile, focusing on {concerns_str} with gentle, non-stripping actives "
-            f"will help soothe irritation and restore a smooth, calm glow within just a few weeks."
-        )
-
-        return f"{spot_desc} {moisture_desc} {closing_desc}"
+        lines = [
+            "Photo ke basis par exact clinical diagnosis nahi kar sakte, but visual scan ke according:\n",
+            f"• Forehead & T-Zone: Lagbhag {comedones} small clogged pores aur micro-comedones visible hain, jisse texture thoda uneven lag raha hai.",
+            f"• Cheeks: {papules} active surface bumps notice hue hain, jahan halki redness dikh sakti hai.",
+            f"• Hydration & Marks: Hydration level {int(hydration)}/100 hai (barrier ko extra moisture aur soothing care chahiye), aur purane spots ke halkey marks dikh rahe hain.",
+            f"• Overall: Skin {severity.lower()} {skin_type.lower()} acne-prone lag rahi hai; severe ya cystic jaisa kuch obvious nahi hai.",
+            "• Note: Camera lighting aur resolution se actual appearance mein thoda difference ho sakta hai.\n",
+            "Isi scan ke basis par neeche humne aapke liye complete Morning & Night routine aur targeted Joyory products select kiye hain!"
+        ]
+        return "\n".join(lines)
 
 narrator_agent = NarratorAgent()

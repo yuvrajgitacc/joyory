@@ -17,26 +17,26 @@ export default function NarratorCard({ narrativeText, skinType }) {
         </div>
 
         {/* Narrative Content */}
-        <div className="flex-1 space-y-2">
+        <div className="flex-1 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                Skin Condition Narrative
+                Skin Condition Overview
               </span>
-              <span className="text-[11px] px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/20 font-medium">
+              <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/25 font-medium">
                 Gemini 2.5 Voice
               </span>
             </div>
             <span className="text-[11px] text-slate-400 font-medium">
-              Interpreting raw neural network scan
+              Interpreting real-time neural network scan
             </span>
           </div>
 
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-            "{narrativeText}"
-          </p>
+          <div className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal whitespace-pre-line bg-slate-950/40 p-4 rounded-xl border border-slate-800/80">
+            {narrativeText}
+          </div>
 
-          <div className="pt-2 flex items-center gap-2 text-xs text-slate-400">
+          <div className="pt-1 flex items-center gap-2 text-xs text-slate-400">
             <HeartHandshake className="w-4 h-4 text-rose-400 flex-shrink-0" />
             <span>Gentle cosmetic analysis • Joyory Personal Care Companion</span>
           </div>
