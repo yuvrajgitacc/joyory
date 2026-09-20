@@ -1,0 +1,378 @@
+[
+  {
+    "_id": "69b273ff47a8ea1668be51f0",
+    "slug": "under-999-deals-collection",
+    "title": "Under 999 Deals",
+    "description": "All products available under ₹999",
+    "images": [],
+    "type": "collection",
+    "tags": [
+      "collection"
+    ],
+    "scope": "global",
+    "targetSlug": null,
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "",
+    "isScheduled": false,
+    "countdown": {
+      "days": 833,
+      "hours": 11,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [],
+      "products": [],
+      "promotionConfig": {
+        "maxProductPrice": 999
+      },
+      "startDate": "2024-12-31T18:30:00.000Z",
+      "endDate": "2028-12-31T18:29:00.000Z"
+    }
+  },
+  {
+    "_id": "69b273f747a8ea1668be51ec",
+    "slug": "under-799-deals-collection",
+    "title": "Under 799 Deals",
+    "description": "All products available under ₹799",
+    "images": [],
+    "type": "collection",
+    "tags": [
+      "collection"
+    ],
+    "scope": "global",
+    "targetSlug": null,
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "",
+    "isScheduled": false,
+    "countdown": {
+      "days": 558,
+      "hours": 11,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [],
+      "products": [],
+      "promotionConfig": {
+        "maxProductPrice": 799
+      },
+      "startDate": "2026-03-03T18:30:00.000Z",
+      "endDate": "2028-03-31T18:29:00.000Z"
+    }
+  },
+  {
+    "_id": "6aabbae4e1ca18101803c26c",
+    "slug": "aqualogica-buy-1-get-1-free-bogo-0",
+    "title": "Aqualogica - Buy 1 Get 1 FREE",
+    "description": "Buy 1 Get 1 FREE on eligible Aqualogica products. Use code GLOW.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789639394/promotions/e1qkelsvk8imfqqu46kv.png"
+    ],
+    "type": "bogo",
+    "tags": [
+      "trending",
+      "combo",
+      "special"
+    ],
+    "scope": "brand",
+    "targetSlug": "aqualogica",
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "BOGO 1+1",
+    "isScheduled": false,
+    "countdown": {
+      "days": 0,
+      "hours": 11,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "691d5b0c4c03633730a1ab06",
+          "slug": "aqualogica",
+          "name": "Aqualogica"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "buyQty": 1,
+        "getQty": 1,
+        "sameProduct": false,
+        "freeProductId": null
+      },
+      "startDate": "2026-09-16T18:30:00.000Z",
+      "endDate": "2026-09-20T18:29:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacbeaae1ca18101804c11d",
+    "slug": "conscious-chemist-buy-1-get-1-free-bogo-0",
+    "title": "Conscious Chemist - Buy 1 Get 1 Free",
+    "description": "Buy 1 Conscious Chemist product and get 1 product free.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789792494/promotions/bozfp2cwbunjon5ekvdg.png"
+    ],
+    "type": "bogo",
+    "tags": [
+      "seasonal",
+      "trending"
+    ],
+    "scope": "brand",
+    "targetSlug": "consious-chemist",
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "BOGO 1+1",
+    "isScheduled": false,
+    "countdown": {
+      "days": 10,
+      "hours": 16,
+      "minutes": 48,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "6a4df5ce1c49ef00c4380730",
+          "slug": "consious-chemist",
+          "name": "Consious Chemist"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "buyQty": 1,
+        "getQty": 1,
+        "sameProduct": false,
+        "freeProductId": null
+      },
+      "startDate": "2026-09-17T00:00:00.000Z",
+      "endDate": "2026-09-30T23:59:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacc33be1ca18101804cf61",
+    "slug": "gabit-skincare-15percent-off-discount-15",
+    "title": "Gabit Skincare - 5% OFF",
+    "description": "Get 15% off on Gabit Skincare products.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789707066/promotions/gklkgzyfnjhblde4ghkj.png"
+    ],
+    "type": "discount",
+    "tags": [
+      "seasonal",
+      "trending",
+      "special"
+    ],
+    "scope": "brand",
+    "targetSlug": "gabit-skincare",
+    "discountPercent": 5,
+    "discountAmount": null,
+    "discountLabel": "5% OFF",
+    "isScheduled": false,
+    "countdown": {
+      "days": 10,
+      "hours": 16,
+      "minutes": 48,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "6a4dee971c49ef00c437efea",
+          "slug": "gabit-skincare",
+          "name": "Gabit Skincare"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "rangeLabel": null
+      },
+      "startDate": "2026-09-17T00:00:00.000Z",
+      "endDate": "2026-09-30T23:59:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacc1b5e1ca18101804c9ac",
+    "slug": "dr-sheths-buy-1-get-1-free-bogo-0",
+    "title": "Dr Sheth's - Buy 1 Get 1 FREE",
+    "description": "Buy 1 Dr Sheth's product and get 1 product FREE",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789792248/promotions/c2hlmccgcc0n1rktgo9n.png"
+    ],
+    "type": "bogo",
+    "tags": [
+      "seasonal",
+      "special",
+      "trending"
+    ],
+    "scope": "brand",
+    "targetSlug": "dr-sheth-s",
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "BOGO 1+1",
+    "isScheduled": false,
+    "countdown": {
+      "days": 9,
+      "hours": 22,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "68ac2ce885b90b286e0453bb",
+          "slug": "dr-sheth-s",
+          "name": "Dr Sheth's"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "buyQty": 1,
+        "getQty": 1,
+        "sameProduct": false,
+        "freeProductId": null
+      },
+      "startDate": "2026-09-17T05:30:00.000Z",
+      "endDate": "2026-09-30T05:29:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacc77be1ca18101804e722",
+    "slug": "the-derma-co-12percent-off-discount-12",
+    "title": "The Derma Co - 12% OFF",
+    "description": "Get 12% off on The Derma Co products.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789708154/promotions/rokr67zldb1dqdmrcpzm.png"
+    ],
+    "type": "discount",
+    "tags": [
+      "seasonal",
+      "trending",
+      "special"
+    ],
+    "scope": "brand",
+    "targetSlug": "the-derma-co",
+    "discountPercent": 12,
+    "discountAmount": null,
+    "discountLabel": "12% OFF",
+    "isScheduled": false,
+    "countdown": {
+      "days": 9,
+      "hours": 22,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "691d584d4c03633730a1a525",
+          "slug": "the-derma-co",
+          "name": "The Derma Co"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "rangeLabel": null
+      },
+      "startDate": "2026-09-17T05:30:00.000Z",
+      "endDate": "2026-09-30T05:29:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacbfabe1ca18101804c527",
+    "slug": "dot-and-key-flat-20percent-off-discount-20",
+    "title": "DOT & KEY - Flat 20% OFF",
+    "description": "Get flat 20% off on DOT & KEY products.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789706154/promotions/aix0j0zkkhcpzkojxoih.png"
+    ],
+    "type": "discount",
+    "tags": [
+      "seasonal",
+      "trending",
+      "special"
+    ],
+    "scope": "brand",
+    "targetSlug": "dot-key",
+    "discountPercent": 20,
+    "discountAmount": null,
+    "discountLabel": "20% OFF",
+    "isScheduled": false,
+    "countdown": {
+      "days": 10,
+      "hours": 11,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "68ad3953ae42591c8afc5bc4",
+          "slug": "dot-key",
+          "name": "DOT & KEY"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {},
+      "startDate": "2026-09-17T18:30:00.000Z",
+      "endDate": "2026-09-30T18:29:00.000Z"
+    }
+  },
+  {
+    "_id": "6aacc5f6e1ca18101804e408",
+    "slug": "pilgrim-buy-1-get-1-free-bogo-0",
+    "title": "Pilgrim - Buy 1 Get 1 FREE",
+    "description": "Buy 1 Pilgrim product and get 1 product FREE.",
+    "images": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1789707765/promotions/ygndjph1bu8nehuij0d6.png"
+    ],
+    "type": "bogo",
+    "tags": [
+      "seasonal",
+      "trending",
+      "special"
+    ],
+    "scope": "brand",
+    "targetSlug": "pilgrim",
+    "discountPercent": null,
+    "discountAmount": null,
+    "discountLabel": "BOGO 1+1",
+    "isScheduled": false,
+    "countdown": {
+      "days": 10,
+      "hours": 11,
+      "minutes": 18,
+      "seconds": 38
+    },
+    "promoMeta": {
+      "categories": [],
+      "brands": [
+        {
+          "id": "691d5c2c4c03633730a1b148",
+          "slug": "pilgrim",
+          "name": "Pilgrim"
+        }
+      ],
+      "products": [],
+      "promotionConfig": {
+        "buyQty": 1,
+        "getQty": 1,
+        "sameProduct": false,
+        "freeProductId": null
+      },
+      "startDate": "2026-09-17T18:30:00.000Z",
+      "endDate": "2026-09-30T18:29:00.000Z"
+    }
+  }
+]

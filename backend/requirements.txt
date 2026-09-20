@@ -1,0 +1,14 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+python-multipart>=0.0.9
+onnxruntime>=1.18.0
+skin-tone-classifier
+google-genai
+pillow>=10.2.0
+numpy>=1.26.0
+opencv-python-headless>=4.9.0.80
+pydantic>=2.7.0
+python-dotenv>=1.0.0
+requests
+openai>=1.0.0
+

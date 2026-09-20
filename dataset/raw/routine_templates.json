@@ -1,0 +1,232 @@
+{
+  "success": true,
+  "templates": [
+    {
+      "id": "acne_removal",
+      "name": "Acne Removal Routine",
+      "goals": [
+        "Acne Clearance",
+        "Pore Refining"
+      ],
+      "difficulty": "medium",
+      "durationDays": 30,
+      "timeline": "Week 2 -> Less inflammation | Week 4 -> Reduced active acne | Week 8 -> Improved texture",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Salicylic Acid Serum",
+        "Gentle Cleanser",
+        "Barrier Repair Moisturizer",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "tan_removal",
+      "name": "Tan Removal Routine",
+      "goals": [
+        "Dark Spot Fading",
+        "Brightening"
+      ],
+      "difficulty": "easy",
+      "durationDays": 45,
+      "timeline": "Week 2 -> Calmer skin tone | Week 4 -> Fading tan lines | Week 8 -> Restored skin complexion",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Vitamin C Serum",
+        "Brightening Cleanser",
+        "Hydrating Cream",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "brightening",
+      "name": "Brightening Routine",
+      "goals": [
+        "Dark Spot Fading",
+        "Radiant Skin"
+      ],
+      "difficulty": "easy",
+      "durationDays": 45,
+      "timeline": "Week 2 -> Enhanced hydration | Week 4 -> Subtle brightness increase | Week 8 -> Visibly even tone",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Niacinamide Serum",
+        "Gentle Face Wash",
+        "Cica Cream",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "hyperpigmentation",
+      "name": "Hyperpigmentation Routine",
+      "goals": [
+        "Dark Spot Fading",
+        "Melanogenesis Regulation"
+      ],
+      "difficulty": "advanced",
+      "durationDays": 60,
+      "timeline": "Week 2 -> Exfoliation phase | Week 4 -> Spot fading starts | Week 8 -> Significant fade",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Retinol Serum",
+        "Kojic Acid Serum",
+        "Ceramide Cream",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "anti_aging",
+      "name": "Anti-Aging Routine",
+      "goals": [
+        "Wrinkle Fading",
+        "Collagen Booster"
+      ],
+      "difficulty": "advanced",
+      "durationDays": 60,
+      "timeline": "Week 2 -> Retinol adaptation | Week 4 -> Increased hydration | Week 8 -> Reduced fine lines",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Retinol Cream",
+        "Peptide Serum",
+        "Firming Cream",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "dry_skin_repair",
+      "name": "Dry Skin Repair Routine",
+      "goals": [
+        "Hydration",
+        "Barrier Lock"
+      ],
+      "difficulty": "easy",
+      "durationDays": 30,
+      "timeline": "Week 1 -> Relief from tightness | Week 2 -> Flake reduction | Week 4 -> Deeper plumpness",
+      "requiredCategories": [
+        "cleanser",
+        "toner",
+        "moisturizer"
+      ],
+      "recommendedProducts": [
+        "Hyaluronic Acid Serum",
+        "Hydrating Cleanser",
+        "Intense Moisture Cream"
+      ]
+    },
+    {
+      "id": "sensitive_skin_recovery",
+      "name": "Sensitive Skin Recovery Routine",
+      "goals": [
+        "Barrier Repair",
+        "Calming"
+      ],
+      "difficulty": "easy",
+      "durationDays": 30,
+      "timeline": "Week 1 -> Reduced redness | Week 2 -> Calm skin feeling | Week 4 -> Restored resistance",
+      "requiredCategories": [
+        "cleanser",
+        "essence",
+        "moisturizer"
+      ],
+      "recommendedProducts": [
+        "Centella Ampoule",
+        "Gentle Foam Cleanser",
+        "Cica Cream"
+      ]
+    },
+    {
+      "id": "barrier_repair",
+      "name": "Barrier Repair Routine",
+      "goals": [
+        "Barrier Repair",
+        "Soothing"
+      ],
+      "difficulty": "easy",
+      "durationDays": 30,
+      "timeline": "Week 1 -> Reduced burning | Week 2 -> Decreased dry patches | Week 4 -> Restored barrier strength",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer"
+      ],
+      "recommendedProducts": [
+        "Ceramide Serum",
+        "Oat Cleanser",
+        "Barrier Support Cream"
+      ]
+    },
+    {
+      "id": "oily_skin_control",
+      "name": "Oily Skin Control Routine",
+      "goals": [
+        "Oil Control",
+        "Pore Tightening"
+      ],
+      "difficulty": "easy",
+      "durationDays": 30,
+      "timeline": "Week 1 -> Matte effect | Week 2 -> Balanced sebum production | Week 4 -> Refined pores",
+      "requiredCategories": [
+        "cleanser",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Niacinamide Serum",
+        "Salicylic Acid Cleanser",
+        "Oil-Free Moisturizer",
+        "SPF50 Sunscreen"
+      ]
+    },
+    {
+      "id": "glass_skin",
+      "name": "Glass Skin Routine",
+      "goals": [
+        "Hydration",
+        "Dewy Tone"
+      ],
+      "difficulty": "medium",
+      "durationDays": 30,
+      "timeline": "Week 1 -> Immediate glow | Week 2 -> Dewy texture | Week 4 -> Translucent skin",
+      "requiredCategories": [
+        "cleanser",
+        "toner",
+        "essence",
+        "serum",
+        "moisturizer",
+        "sunscreen"
+      ],
+      "recommendedProducts": [
+        "Rice Toner",
+        "Hyaluronic Serum",
+        "Snail Mucin Essence",
+        "Moisture Lock Cream",
+        "SPF50 Sunscreen"
+      ]
+    }
+  ]
+}

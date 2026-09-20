@@ -1,0 +1,1085 @@
+{
+  "success": true,
+  "products": [
+    {
+      "_id": "6a572fab78fc121d9768eb3f",
+      "name": "Refresh+ Dewy Floral Kiss Perfume Body Mist with Zemea & Hyaluronic Acid",
+      "slugs": [
+        "refresh-dewy-floral-kiss-perfume-body-mist-with-zemea-and-hyaluronic-acid-150-ml-aqualogica-fragrances"
+      ],
+      "category": {
+        "_id": "6a4f29e9b770864d759ef5d3",
+        "name": "Fragrances",
+        "slug": "fragrances"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d5b0c4c03633730a1ab06",
+        "name": "Aqualogica",
+        "slug": "aqualogica"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 499,
+      "discountedPrice": 424,
+      "discountPercent": 15,
+      "discountAmount": 75,
+      "mrp": 499,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "123",
+          "shadeName": "150 ml",
+          "slug": "refresh-dewy-floral-kiss-perfume-body-mist-with-zemea-and-hyaluronic-acid-150-ml-aqualogica-fragrances",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1784098730/products/variants/lpjkqoqb66sy0jlo2p6f.png"
+          ],
+          "stock": 9,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "aqualogica_main_wh",
+              "stock": 9
+            }
+          ],
+          "sales": 1,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-15T06:58:51.457Z",
+          "discountedPrice": 424,
+          "displayPrice": 424,
+          "mrp": 499,
+          "buyingPrice": 499,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 499,
+          "discountAmount": 75,
+          "discountPercent": 15,
+          "promoApplied": true,
+          "promoMessage": [
+            "Buy 1 Get 1 Free"
+          ],
+          "variantSize": null,
+          "nextOrderDiscountValue": 42,
+          "nextOrderDiscountMessage": "Buy this product and get 420 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "150 ml",
+          "sku": "123",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1784098730/products/variants/lpjkqoqb66sy0jlo2p6f.png",
+          "price": 424,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "123",
+        "shadeName": "150 ml",
+        "slug": "refresh-dewy-floral-kiss-perfume-body-mist-with-zemea-and-hyaluronic-acid-150-ml-aqualogica-fragrances",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1784098730/products/variants/lpjkqoqb66sy0jlo2p6f.png"
+        ],
+        "stock": 9,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "aqualogica_main_wh",
+            "stock": 9
+          }
+        ],
+        "sales": 1,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-15T06:58:51.457Z",
+        "discountedPrice": 424,
+        "displayPrice": 424,
+        "mrp": 499,
+        "buyingPrice": 499,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 499,
+        "discountAmount": 75,
+        "discountPercent": 15,
+        "promoApplied": true,
+        "promoMessage": [
+          "Buy 1 Get 1 Free"
+        ],
+        "variantSize": null,
+        "nextOrderDiscountValue": 42,
+        "nextOrderDiscountMessage": "Buy this product and get 420 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 42,
+      "nextOrderDiscountMessage": "Buy this product and get 420 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6ae8e4260c92beae2f97c6",
+      "name": "Green Tea Oil-Free Moisturizer For Oily & Acne-Prone Skin",
+      "slugs": [
+        "green-tea-oil-free-moisturizer-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer"
+      ],
+      "category": {
+        "_id": "698c66d18c336e056f72f868",
+        "name": "Moisturizer",
+        "slug": "skin-moisturizer"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 470,
+      "discountedPrice": 413,
+      "discountPercent": 12,
+      "discountAmount": 57,
+      "mrp": 470,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "41",
+          "shadeName": "50 ml",
+          "slug": "green-tea-oil-free-moisturizer-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785391330/products/variants/advh8pwmnqigvz9ziyga.png",
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785391331/products/variants/svxt2k91kneo8ceen1j3.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:02:12.018Z",
+          "discountedPrice": 413,
+          "displayPrice": 413,
+          "mrp": 470,
+          "buyingPrice": 470,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 470,
+          "discountAmount": 57,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 41,
+          "nextOrderDiscountMessage": "Buy this product and get 410 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "50 ml",
+          "sku": "41",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785391330/products/variants/advh8pwmnqigvz9ziyga.png",
+          "price": 413,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "41",
+        "shadeName": "50 ml",
+        "slug": "green-tea-oil-free-moisturizer-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785391330/products/variants/advh8pwmnqigvz9ziyga.png",
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785391331/products/variants/svxt2k91kneo8ceen1j3.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:02:12.018Z",
+        "discountedPrice": 413,
+        "displayPrice": 413,
+        "mrp": 470,
+        "buyingPrice": 470,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 470,
+        "discountAmount": 57,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 41,
+        "nextOrderDiscountMessage": "Buy this product and get 410 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 41,
+      "nextOrderDiscountMessage": "Buy this product and get 410 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6ae949260c92beae2f9874",
+      "name": "Green Tea Renewed Clarity Night Gel For Oily & Acne-Prone Skin",
+      "slugs": [
+        "green-tea-renewed-clarity-night-gel-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer-night-cream"
+      ],
+      "category": {
+        "_id": "698c67458c336e056f72f919",
+        "name": "Night Cream",
+        "slug": "skin-moisturizer-night-cream"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 575,
+      "discountedPrice": 506,
+      "discountPercent": 12,
+      "discountAmount": 69,
+      "mrp": 575,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "23",
+          "shadeName": "50 ml",
+          "slug": "green-tea-renewed-clarity-night-gel-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer-night-cream",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785391433/products/variants/gwy4o6cyawc5ythym0ol.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:03:53.612Z",
+          "discountedPrice": 506,
+          "displayPrice": 506,
+          "mrp": 575,
+          "buyingPrice": 575,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 575,
+          "discountAmount": 69,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 51,
+          "nextOrderDiscountMessage": "Buy this product and get 510 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "50 ml",
+          "sku": "23",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785391433/products/variants/gwy4o6cyawc5ythym0ol.png",
+          "price": 506,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "23",
+        "shadeName": "50 ml",
+        "slug": "green-tea-renewed-clarity-night-gel-for-oily-and-acne-prone-skin-50-ml-plum-skin-moisturizer-night-cream",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785391433/products/variants/gwy4o6cyawc5ythym0ol.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:03:53.612Z",
+        "discountedPrice": 506,
+        "displayPrice": 506,
+        "mrp": 575,
+        "buyingPrice": 575,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 575,
+        "discountAmount": 69,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 51,
+        "nextOrderDiscountMessage": "Buy this product and get 510 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 51,
+      "nextOrderDiscountMessage": "Buy this product and get 510 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6ae9d7260c92beae2f99b1",
+      "name": "Green Tea Alcohol-Free Pore Tightening Face Toner For Oily & Acne-Prone Skin",
+      "slugs": [
+        "green-tea-alcohol-free-pore-tightening-face-toner-for-oily-and-acne-prone-skin-200-ml-plum-skin"
+      ],
+      "category": {
+        "_id": "69367dd586d1d5dba80dd000",
+        "name": "Skin",
+        "slug": "skin"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 420,
+      "discountedPrice": 369,
+      "discountPercent": 12,
+      "discountAmount": 51,
+      "mrp": 420,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "123",
+          "shadeName": "200 ml",
+          "slug": "green-tea-alcohol-free-pore-tightening-face-toner-for-oily-and-acne-prone-skin-200-ml-plum-skin",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785391574/products/variants/hoijrlmrmczhzgfak2za.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:06:15.043Z",
+          "discountedPrice": 369,
+          "displayPrice": 369,
+          "mrp": 420,
+          "buyingPrice": 420,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 420,
+          "discountAmount": 51,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 37,
+          "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "200 ml",
+          "sku": "123",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785391574/products/variants/hoijrlmrmczhzgfak2za.png",
+          "price": 369,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "123",
+        "shadeName": "200 ml",
+        "slug": "green-tea-alcohol-free-pore-tightening-face-toner-for-oily-and-acne-prone-skin-200-ml-plum-skin",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785391574/products/variants/hoijrlmrmczhzgfak2za.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:06:15.043Z",
+        "discountedPrice": 369,
+        "displayPrice": 369,
+        "mrp": 420,
+        "buyingPrice": 420,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 420,
+        "discountAmount": 51,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 37,
+        "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 37,
+      "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6aeb67260c92beae2f9c4a",
+      "name": "Green Tea Clear Face Mask For Oily & Acne-Prone Skin",
+      "slugs": [
+        "green-tea-clear-face-mask-for-oily-and-acne-prone-skin-60-g-plum-skin-mask"
+      ],
+      "category": {
+        "_id": "6a30faefd6427f3ce3260cb0",
+        "name": "Mask",
+        "slug": "skin-mask"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 490,
+      "discountedPrice": 431,
+      "discountPercent": 12,
+      "discountAmount": 59,
+      "mrp": 490,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "12",
+          "shadeName": "60 g",
+          "slug": "green-tea-clear-face-mask-for-oily-and-acne-prone-skin-60-g-plum-skin-mask",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785391974/products/variants/kwbjfnkfhg8ghrnxr95s.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:12:54.922Z",
+          "discountedPrice": 431,
+          "displayPrice": 431,
+          "mrp": 490,
+          "buyingPrice": 490,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 490,
+          "discountAmount": 59,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 43,
+          "nextOrderDiscountMessage": "Buy this product and get 430 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "60 g",
+          "sku": "12",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785391974/products/variants/kwbjfnkfhg8ghrnxr95s.png",
+          "price": 431,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "12",
+        "shadeName": "60 g",
+        "slug": "green-tea-clear-face-mask-for-oily-and-acne-prone-skin-60-g-plum-skin-mask",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785391974/products/variants/kwbjfnkfhg8ghrnxr95s.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:12:54.922Z",
+        "discountedPrice": 431,
+        "displayPrice": 431,
+        "mrp": 490,
+        "buyingPrice": 490,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 490,
+        "discountAmount": 59,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 43,
+        "nextOrderDiscountMessage": "Buy this product and get 430 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 43,
+      "nextOrderDiscountMessage": "Buy this product and get 430 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6aecd5260c92beae2fa56a",
+      "name": "2% Alpha Arbutin & Hyaluronic Acid Tan Fading Face Serum For All Skin Types",
+      "slugs": [
+        "2percent-alpha-arbutin-and-hyaluronic-acid-tan-fading-face-serum-for-all-skin-types-30-ml-plum-skin-serums-and-essences-serum"
+      ],
+      "category": {
+        "_id": "6a30f9aed6427f3ce326026c",
+        "name": "Serum",
+        "slug": "skin-serums-and-essences-serum"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 599,
+      "discountedPrice": 527,
+      "discountPercent": 12,
+      "discountAmount": 72,
+      "mrp": 599,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "12",
+          "shadeName": "30 ml",
+          "slug": "2percent-alpha-arbutin-and-hyaluronic-acid-tan-fading-face-serum-for-all-skin-types-30-ml-plum-skin-serums-and-essences-serum",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785392339/products/variants/v6rqtk75qrduyjwbh4zg.png",
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785392340/products/variants/upkde0h5jwnkzkzkkaqb.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:19:00.891Z",
+          "discountedPrice": 527,
+          "displayPrice": 527,
+          "mrp": 599,
+          "buyingPrice": 599,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 599,
+          "discountAmount": 72,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 53,
+          "nextOrderDiscountMessage": "Buy this product and get 530 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "30 ml",
+          "sku": "12",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785392339/products/variants/v6rqtk75qrduyjwbh4zg.png",
+          "price": 527,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "12",
+        "shadeName": "30 ml",
+        "slug": "2percent-alpha-arbutin-and-hyaluronic-acid-tan-fading-face-serum-for-all-skin-types-30-ml-plum-skin-serums-and-essences-serum",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785392339/products/variants/v6rqtk75qrduyjwbh4zg.png",
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785392340/products/variants/upkde0h5jwnkzkzkkaqb.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:19:00.891Z",
+        "discountedPrice": 527,
+        "displayPrice": 527,
+        "mrp": 599,
+        "buyingPrice": 599,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 599,
+        "discountAmount": 72,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 53,
+        "nextOrderDiscountMessage": "Buy this product and get 530 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 53,
+      "nextOrderDiscountMessage": "Buy this product and get 530 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6af047260c92beae2fad28",
+      "name": "1% Vitamin C & Mandarin Pore Tightening Face Toner",
+      "slugs": [
+        "1percent-vitamin-c-and-mandarin-pore-tightening-face-toner-150-ml-plum-skin-toners-and-mist-toner"
+      ],
+      "category": {
+        "_id": "6a30f90ad6427f3ce325f221",
+        "name": "Toner",
+        "slug": "skin-toners-and-mist-toner"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 420,
+      "discountedPrice": 369,
+      "discountPercent": 12,
+      "discountAmount": 51,
+      "mrp": 420,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "321",
+          "shadeName": "150 ml",
+          "slug": "1percent-vitamin-c-and-mandarin-pore-tightening-face-toner-150-ml-plum-skin-toners-and-mist-toner",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785393222/products/variants/mdyrklojuwexwhm0l1j9.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:33:43.545Z",
+          "discountedPrice": 369,
+          "displayPrice": 369,
+          "mrp": 420,
+          "buyingPrice": 420,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 420,
+          "discountAmount": 51,
+          "discountPercent": 12,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 37,
+          "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "150 ml",
+          "sku": "321",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785393222/products/variants/mdyrklojuwexwhm0l1j9.png",
+          "price": 369,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "321",
+        "shadeName": "150 ml",
+        "slug": "1percent-vitamin-c-and-mandarin-pore-tightening-face-toner-150-ml-plum-skin-toners-and-mist-toner",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785393222/products/variants/mdyrklojuwexwhm0l1j9.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:33:43.545Z",
+        "discountedPrice": 369,
+        "displayPrice": 369,
+        "mrp": 420,
+        "buyingPrice": 420,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 420,
+        "discountAmount": 51,
+        "discountPercent": 12,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 37,
+        "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 37,
+      "nextOrderDiscountMessage": "Buy this product and get 370 Joy Points on your next order!"
+    },
+    {
+      "_id": "6a6af0fa260c92beae2fae6a",
+      "name": "1% Vitamin C Ultra-Light-Glow Boosting Gel Cream For Glowing Skin",
+      "slugs": [
+        "1percent-vitamin-c-ultra-light-glow-boosting-gel-cream-for-glowing-skin-50-g-plum-skin-moisturizer"
+      ],
+      "category": {
+        "_id": "698c66d18c336e056f72f868",
+        "name": "Moisturizer",
+        "slug": "skin-moisturizer"
+      },
+      "categories": [],
+      "categoryHierarchy": [],
+      "brand": {
+        "_id": "691d53054c03633730a15802",
+        "name": "Plum",
+        "slug": "plum"
+      },
+      "skinTypes": [],
+      "formulation": null,
+      "price": 549,
+      "discountedPrice": 549,
+      "discountPercent": 0,
+      "discountAmount": 0,
+      "mrp": 549,
+      "supportsVTO": false,
+      "vtoType": null,
+      "description": "",
+      "howToUse": "",
+      "ingredients": "",
+      "images": [],
+      "variants": [
+        {
+          "sku": "13",
+          "shadeName": "50 g",
+          "slug": "1percent-vitamin-c-ultra-light-glow-boosting-gel-cream-for-glowing-skin-50-g-plum-skin-moisturizer",
+          "hex": "",
+          "images": [
+            "https://res.cloudinary.com/dekngswix/image/upload/v1785393401/products/variants/dl9zirytpsiyedh68oq7.png"
+          ],
+          "stock": 10,
+          "stockByWarehouse": [
+            {
+              "warehouseCode": "plum_main_wh",
+              "stock": 10
+            }
+          ],
+          "sales": 10,
+          "thresholdValue": 1,
+          "isActive": true,
+          "createdAt": "2026-07-30T06:36:42.333Z",
+          "discountedPrice": 549,
+          "displayPrice": 549,
+          "mrp": 549,
+          "buyingPrice": 549,
+          "familyKey": "",
+          "toneKeys": [],
+          "undertoneKeys": [],
+          "lab": {
+            "L": 0,
+            "a": 0,
+            "b": 0
+          },
+          "status": "inStock",
+          "message": "In-stock",
+          "originalPrice": 549,
+          "discountAmount": 0,
+          "discountPercent": 0,
+          "promoApplied": false,
+          "promoMessage": null,
+          "variantSize": null,
+          "nextOrderDiscountValue": 55,
+          "nextOrderDiscountMessage": "Buy this product and get 550 Joy Points on your next order!"
+        }
+      ],
+      "shadeOptions": [
+        {
+          "name": "50 g",
+          "sku": "13",
+          "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785393401/products/variants/dl9zirytpsiyedh68oq7.png",
+          "price": 549,
+          "status": "inStock"
+        }
+      ],
+      "status": "inStock",
+      "message": "In-stock",
+      "avgRating": 0,
+      "totalRatings": 0,
+      "inStock": true,
+      "selectedVariant": {
+        "sku": "13",
+        "shadeName": "50 g",
+        "slug": "1percent-vitamin-c-ultra-light-glow-boosting-gel-cream-for-glowing-skin-50-g-plum-skin-moisturizer",
+        "hex": "",
+        "images": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1785393401/products/variants/dl9zirytpsiyedh68oq7.png"
+        ],
+        "stock": 10,
+        "stockByWarehouse": [
+          {
+            "warehouseCode": "plum_main_wh",
+            "stock": 10
+          }
+        ],
+        "sales": 10,
+        "thresholdValue": 1,
+        "isActive": true,
+        "createdAt": "2026-07-30T06:36:42.333Z",
+        "discountedPrice": 549,
+        "displayPrice": 549,
+        "mrp": 549,
+        "buyingPrice": 549,
+        "familyKey": "",
+        "toneKeys": [],
+        "undertoneKeys": [],
+        "lab": {
+          "L": 0,
+          "a": 0,
+          "b": 0
+        },
+        "status": "inStock",
+        "message": "In-stock",
+        "originalPrice": 549,
+        "discountAmount": 0,
+        "discountPercent": 0,
+        "promoApplied": false,
+        "promoMessage": null,
+        "variantSize": null,
+        "nextOrderDiscountValue": 55,
+        "nextOrderDiscountMessage": "Buy this product and get 550 Joy Points on your next order!"
+      },
+      "nextOrderDiscountValue": 55,
+      "nextOrderDiscountMessage": "Buy this product and get 550 Joy Points on your next order!"
+    }
+  ]
+}

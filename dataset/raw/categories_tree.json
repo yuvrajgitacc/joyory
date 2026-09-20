@@ -1,0 +1,660 @@
+[
+  {
+    "_id": "6958e5df81a0364d6ad9c58e",
+    "name": "Makeup",
+    "slug": "makeup",
+    "bannerImage": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1778648536/categories/banner/bbvebfevyob6bfk3r2ly.png",
+        "link": "",
+        "_id": "6a4f3cd1b770864d759f1dfa"
+      },
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1778648539/categories/banner/r5xbzaqgyhdlcr6mwcfp.png",
+        "link": "",
+        "_id": "6a4f3cd1b770864d759f1dfb"
+      }
+    ],
+    "thumbnailImage": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1783577811/categories/thumbnail/uotp9cme60mf4djv0pbv.png"
+    ],
+    "subCategories": [
+      {
+        "_id": "69575c6d68e8197a4fbff31d",
+        "name": "Face",
+        "slug": "face",
+        "bannerImage": [
+          {
+            "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777272625/categories/banner/hnphl9kdti37aarvck4s.png",
+            "link": "",
+            "_id": "6a30fc72d6427f3ce3261fec"
+          }
+        ],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778668370/categories/thumbnail/m2jwhf7snkhook2tdzb7.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30fd0bd6427f3ce3262433",
+            "name": "Blush",
+            "slug": "face-blush",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a2686a81a492adbff62b8e8",
+            "name": "Compact",
+            "slug": "eyes-compact",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd1ad6427f3ce32624f8",
+            "name": "Bronzer",
+            "slug": "face-bronzer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd53d6427f3ce326276f",
+            "name": "Concealers & Correctors",
+            "slug": "face-concealers-and-correctors",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd65d6427f3ce326282b",
+            "name": "Contour",
+            "slug": "face-contour",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd76d6427f3ce32628e7",
+            "name": "Foundation",
+            "slug": "face-foundation",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd8dd6427f3ce32629ac",
+            "name": "Highlighters & Illuminators",
+            "slug": "face-highlighters-and-illuminators",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fd9cd6427f3ce3262a68",
+            "name": "Setting Powder",
+            "slug": "face-setting-powder",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe0ed6427f3ce326311f",
+            "name": "Face Makeup Remover",
+            "slug": "face-face-makeup-remover",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe1ad6427f3ce32631db",
+            "name": "Primer",
+            "slug": "face-primer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe27d6427f3ce3263297",
+            "name": "Setting Spray",
+            "slug": "face-setting-spray",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe36d6427f3ce3263353",
+            "name": "Bb & Cc Creams",
+            "slug": "face-bb-and-cc-creams",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe41d6427f3ce3263418",
+            "name": "Loose Powder",
+            "slug": "face-loose-powder",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6979a950f2f916927550b52b",
+        "name": "Eyes",
+        "slug": "eyes",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778668578/categories/thumbnail/plljxyhfsu5t9axte8w2.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "69452951b556a502143e65a2",
+            "name": "Eye - Makeup",
+            "slug": "skin-eyes-eye-makeup",
+            "bannerImage": [
+              {
+                "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777022259/categories/banner/tztbyozkanjd5irgjwut.png",
+                "link": "[\"[\\\"https://mediumorchid-vulture-478183.hostingersite.com/category/makeup/lips\\\",\\\"https://mediumorchid-vulture-478183.hostingersite.com/category/skin\\\",\\\"\\\"]\",\"\",\"\"]",
+                "_id": "6a04546a75f14af8937cb159"
+              },
+              {
+                "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777022260/categories/banner/tnzyadeehtuuxndgysgr.png",
+                "link": "",
+                "_id": "6a04546a75f14af8937cb15a"
+              }
+            ],
+            "thumbnailImage": [
+              "https://res.cloudinary.com/dekngswix/image/upload/v1778668552/categories/thumbnail/l3vzymz0zlwyphjitnbc.png"
+            ],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe6ad6427f3ce32634d3",
+            "name": "Eyebrow Enhancer",
+            "slug": "eyes-eyebrow-enhancer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe80d6427f3ce3263597",
+            "name": "False Eyelashes",
+            "slug": "eyes-false-eyelashes",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe8dd6427f3ce3263652",
+            "name": "Eyeliner",
+            "slug": "eyes-eyeliner",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fe9cd6427f3ce326376c",
+            "name": "Eye Shadow",
+            "slug": "eyes-eye-shadow",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30feb4d6427f3ce326397e",
+            "name": "Kajal & Kohls",
+            "slug": "eyes-kajal-and-kohls",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fec1d6427f3ce3263a42",
+            "name": "Mascara",
+            "slug": "eyes-mascara",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fed4d6427f3ce3263afd",
+            "name": "Under Eye Concealer",
+            "slug": "eyes-under-eye-concealer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6957652268e8197a4fc00dfd",
+        "name": "Lips",
+        "slug": "lips",
+        "bannerImage": [
+          {
+            "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777272893/categories/banner/l6fzdnbruh1o1rhqoaix.png",
+            "link": "https://mediumorchid-vulture-478183.hostingersite.com/wishlist",
+            "_id": "6a04536275f14af8937ca4ec"
+          }
+        ],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778668388/categories/thumbnail/gghgtk1k4afxkaghqb46.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30ff47d6427f3ce3263ce6",
+            "name": "Makeup Lip Balm",
+            "slug": "lips-makeup-lip-balm",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ff5bd6427f3ce3263e14",
+            "name": "Lip Crayon",
+            "slug": "lips-lip-crayon",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ff6cd6427f3ce3263ee4",
+            "name": "Lip Gloss",
+            "slug": "lips-lip-gloss",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ff88d6427f3ce3264003",
+            "name": "Lip Oils",
+            "slug": "lips-lip-oils",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ff9bd6427f3ce326419e",
+            "name": "Lip Liner",
+            "slug": "lips-lip-liner",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ffa9d6427f3ce3264263",
+            "name": "Lip Stain",
+            "slug": "lips-lip-stain",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ffc0d6427f3ce326431f",
+            "name": "Lip Primers & Plumpers",
+            "slug": "lips-lip-primers-and-plumpers",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ffd5d6427f3ce32643db",
+            "name": "Lipstick",
+            "slug": "lips-lipstick",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30ffe5d6427f3ce32644a0",
+            "name": "Liquid Lipstick",
+            "slug": "lips-liquid-lipstick",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      }
+    ],
+    "headerImage": "https://res.cloudinary.com/dekngswix/image/upload/v1783577187/categories/header/cn8ekcmkmfworyevuf8q.png"
+  },
+  {
+    "_id": "69367dd586d1d5dba80dd000",
+    "name": "Skin",
+    "slug": "skin",
+    "bannerImage": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782362596/categories/banner/dlk87wyiqp0iyr7w11ja.png",
+        "link": "",
+        "_id": "6a4f3d35b770864d759f211a"
+      }
+    ],
+    "thumbnailImage": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1783577911/categories/thumbnail/mj0mpxnw1fp2lddhvop3.png"
+    ],
+    "subCategories": [
+      {
+        "_id": "6a30f7c5d6427f3ce325c33c",
+        "name": "Cleansers And Exfoliators",
+        "slug": "skin-cleansers-and-exfoliators",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1782275782/categories/thumbnail/g4xwy0zkexfv3i0zewbn.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30f868d6427f3ce325d774",
+            "name": "Face Washes & Cleansers",
+            "slug": "skin-cleansers-and-exfoliators-face-washes-and-cleansers",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f88cd6427f3ce325e280",
+            "name": "Scrubs & Exfoliators",
+            "slug": "skin-cleansers-and-exfoliators-scrubs-and-exfoliators",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f89ed6427f3ce325e8e2",
+            "name": "Face Wipes",
+            "slug": "skin-cleansers-and-exfoliators-face-wipes",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f8add6427f3ce325ebe8",
+            "name": "Makeup Remover",
+            "slug": "skin-cleansers-and-exfoliators-makeup-remover",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "698c66d18c336e056f72f868",
+        "name": "Moisturizer",
+        "slug": "skin-moisturizer",
+        "bannerImage": [
+          {
+            "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777022457/categories/banner/kr6lrge0zfhjtwp6j4v3.png",
+            "link": "[\"https://mediumorchid-vulture-478183.hostingersite.com/category/makeup/lips\",\"https://mediumorchid-vulture-478183.hostingersite.com/category/skin\",\"\",\"\"]",
+            "_id": "6a01ac4275f14af893789be6"
+          },
+          {
+            "url": "https://res.cloudinary.com/dekngswix/image/upload/v1777022460/categories/banner/oqkb0bgshtuzxfieevgl.png",
+            "link": "",
+            "_id": "6a01ac4275f14af893789be7"
+          }
+        ],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778493662/categories/thumbnail/v31h2ur6vtgtbwwbwaii.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "698c67458c336e056f72f919",
+            "name": "Night Cream",
+            "slug": "skin-moisturizer-night-cream",
+            "bannerImage": [
+              {
+                "url": "https://res.cloudinary.com/dekngswix/image/upload/v1775631556/categories/banner/rcgm94mwpjam3iwqxdws.png",
+                "link": "https://mediumorchid-vulture-478183.hostingersite.com/category/makeup/lips",
+                "_id": "69f47a9b6fc7506ae7cfa8a2"
+              },
+              {
+                "url": "https://res.cloudinary.com/dekngswix/image/upload/v1775631557/categories/banner/kpr2stvwqdyplb7ujkmn.png",
+                "link": "https://mediumorchid-vulture-478183.hostingersite.com/category/skin",
+                "_id": "69f47a9b6fc7506ae7cfa8a3"
+              }
+            ],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f9e7d6427f3ce3260335",
+            "name": "Face Moisturizer",
+            "slug": "skin-moisturizer-face-moisturizer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f9fbd6427f3ce32603f5",
+            "name": "Face Oil",
+            "slug": "skin-moisturizer-face-oil",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a31181fd6427f3ce32684d1",
+            "name": "Skin Tint",
+            "slug": "skin-moisturizer-skin-tint",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a31183bd6427f3ce326869d",
+            "name": "Tinted Moisturizer",
+            "slug": "skin-moisturizer-tinted-moisturizer",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6a30f76ad6427f3ce325bce3",
+        "name": "Lip Care",
+        "slug": "skin-lip-care",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1782276419/categories/thumbnail/pqbcndkn87os81blwonm.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30f8c0d6427f3ce325eecd",
+            "name": "Lip Balm",
+            "slug": "skin-lip-care-lip-balm",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f8cfd6427f3ce325efb3",
+            "name": "Lip Scrub",
+            "slug": "skin-lip-care-lip-scrub",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f8e0d6427f3ce325f071",
+            "name": "Lip Mask",
+            "slug": "skin-lip-care-lip-mask",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f8eed6427f3ce325f163",
+            "name": "Lip Oil",
+            "slug": "skin-lip-care-lip-oil",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6a30f79dd6427f3ce325be66",
+        "name": "Eye Care",
+        "slug": "skin-eye-care",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1782276749/categories/thumbnail/yj0yiyuo1renaxayisil.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30fa61d6427f3ce326075c",
+            "name": "Eye Cream & Serums",
+            "slug": "skin-eye-care-eye-cream-and-serums",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fa75d6427f3ce326081a",
+            "name": "Eye Mask",
+            "slug": "skin-eye-care-eye-mask",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fa87d6427f3ce32608ee",
+            "name": "Eye Makeup Remover",
+            "slug": "skin-eye-care-eye-makeup-remover",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6a01ab1575f14af89378898a",
+        "name": "Sun Care",
+        "slug": "skin-sun-care",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778494228/categories/thumbnail/ra8n7xbxuzoloshxjpq1.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30f980d6427f3ce325ff5e",
+            "name": "Sunscreen",
+            "slug": "skin-sun-care-sunscreen",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ],
+        "headerImage": "https://res.cloudinary.com/dekngswix/image/upload/v1778494229/categories/header/s18iaat4gvamu0nuyqcc.png"
+      },
+      {
+        "_id": "6a30f7f1d6427f3ce325c83b",
+        "name": "Toners & Mist",
+        "slug": "skin-toners-and-mist",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1782276545/categories/thumbnail/as1bjw4sp2vbasxielg0.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30f90ad6427f3ce325f221",
+            "name": "Toner",
+            "slug": "skin-toners-and-mist-toner",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30f91bd6427f3ce325f449",
+            "name": "Mist",
+            "slug": "skin-toners-and-mist-mist",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6a30faefd6427f3ce3260cb0",
+        "name": "Mask",
+        "slug": "skin-mask",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1782275914/categories/thumbnail/xqo6j4maizkudarce00k.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30fb0ad6427f3ce3260d72",
+            "name": "Masks & Peels",
+            "slug": "skin-mask-masks-and-peels",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          },
+          {
+            "_id": "6a30fb1fd6427f3ce3260f3a",
+            "name": "Sheet Mask",
+            "slug": "skin-mask-sheet-mask",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ]
+      },
+      {
+        "_id": "6a01a98c75f14af8937879bc",
+        "name": "Serums And Essences",
+        "slug": "skin-serums-and-essences",
+        "bannerImage": [],
+        "thumbnailImage": [
+          "https://res.cloudinary.com/dekngswix/image/upload/v1778493835/categories/thumbnail/mljlyrn7bcsh1ctmjwdi.png"
+        ],
+        "subCategories": [
+          {
+            "_id": "6a30f9aed6427f3ce326026c",
+            "name": "Serum",
+            "slug": "skin-serums-and-essences-serum",
+            "bannerImage": [],
+            "thumbnailImage": [],
+            "subCategories": []
+          }
+        ],
+        "headerImage": "https://res.cloudinary.com/dekngswix/image/upload/v1778493882/categories/header/tgwzzpfpycfgfpki3jhw.png"
+      }
+    ],
+    "headerImage": "https://res.cloudinary.com/dekngswix/image/upload/v1781677239/categories/header/qnofvls9mxsoaoxwqeuw.png"
+  },
+  {
+    "_id": "6a4b72491c49ef00c4367fa0",
+    "name": "Bath & Body",
+    "slug": "bath-and-body",
+    "bannerImage": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1783493608/categories/banner/wiws9drdgdq0jh3gdwqo.png",
+        "link": "",
+        "_id": "6a4f3cefb770864d759f1f24"
+      },
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1783493793/categories/banner/ecnajrmsstd2a0ihf13a.png",
+        "link": "",
+        "_id": "6a4f3cefb770864d759f1f25"
+      }
+    ],
+    "thumbnailImage": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1783577840/categories/thumbnail/s20zirw3mhjqto4recye.png"
+    ],
+    "subCategories": []
+  },
+  {
+    "_id": "6a4f29e9b770864d759ef5d3",
+    "name": "Fragrances",
+    "slug": "fragrances",
+    "bannerImage": [],
+    "thumbnailImage": [
+      "https://res.cloudinary.com/dekngswix/image/upload/v1783577874/categories/thumbnail/pv5soq7v07wjnyuwmrcj.png"
+    ],
+    "subCategories": []
+  }
+]

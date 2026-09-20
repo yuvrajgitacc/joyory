@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "69f0489cbd48f5a348dd275c",
+      "name": "Acne Prone",
+      "slug": "acne+prone",
+      "description": "",
+      "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785217463/skinTypes/warwmaxmnzly1fuowp9x.png",
+      "isActive": true,
+      "isDeleted": false,
+      "createdAt": "2026-04-28T05:41:48.720Z",
+      "updatedAt": "2026-07-28T05:44:23.735Z",
+      "__v": 0,
+      "productCount": 424
+    },
+    {
+      "_id": "68b1312c968a1685ca4658a7",
+      "name": "Dry",
+      "slug": "dry",
+      "description": "Deep hydration and barrier repair",
+      "isActive": true,
+      "isDeleted": false,
+      "createdAt": "2025-08-29T04:48:44.478Z",
+      "updatedAt": "2026-07-28T05:44:41.997Z",
+      "__v": 0,
+      "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785217481/skinTypes/djjdp8mcizycatlfxwps.png",
+      "productCount": 518
+    },
+    {
+      "_id": "68b186daaf7c8a2b780fe38f",
+      "name": "Sensitive",
+      "slug": "sensitive",
+      "description": "Sensitive skin is highly reactive and prone to irritation, often experiencing redness, itching, burning, or dryness when exposed to certain products, weather changes, or environmental factors.",
+      "image": "https://res.cloudinary.com/dekngswix/image/upload/v1785217496/skinTypes/odt6oynk0nkx0cjo3bqd.png",
+      "isActive": true,
+      "isDeleted": false,
+      "createdAt": "2025-08-29T10:54:18.182Z",
+      "updatedAt": "2026-07-28T05:44:57.477Z",
+      "__v": 0,
+      "productCount": 512
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "total": 3
+  }
+}

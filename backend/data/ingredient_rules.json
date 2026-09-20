@@ -1,0 +1,92 @@
+{
+  "rules": [
+    {
+      "a": "Retinol",
+      "b": "Vitamin C",
+      "level": "SEPARATE",
+      "recommendation": "Use Vitamin C in AM, Retinol in PM",
+      "reason": "Both are potent actives with different optimal pH levels. Separating them protects the skin barrier and reduces irritation risk."
+    },
+    {
+      "a": "Retinol",
+      "b": "Salicylic Acid",
+      "level": "SEPARATE",
+      "recommendation": "Alternate nights or use BHA in AM and Retinol in PM",
+      "reason": "Both accelerate cellular turnover and can compromise the lipid barrier when layered together."
+    },
+    {
+      "a": "Retinol",
+      "b": "Glycolic Acid",
+      "level": "SEPARATE",
+      "recommendation": "Alternate nights",
+      "reason": "Layering potent AHAs with retinoids substantially elevates trans-epidermal water loss and flaking."
+    },
+    {
+      "a": "Retinol",
+      "b": "Benzoyl Peroxide",
+      "level": "AVOID",
+      "recommendation": "Avoid combining directly in the same routine",
+      "reason": "Benzoyl peroxide can oxidize and deactivate retinol formulations, while causing severe localized dryness."
+    },
+    {
+      "a": "Glycolic Acid",
+      "b": "Salicylic Acid",
+      "level": "CAUTION",
+      "recommendation": "Use combined formulations only, or alternate usage frequency",
+      "reason": "Dual chemical exfoliants can over-strip delicate stratum corneum if not buffered by humectants."
+    },
+    {
+      "a": "Vitamin C",
+      "b": "Niacinamide",
+      "level": "SAFE",
+      "recommendation": "Safe to use together in modern formulations",
+      "reason": "Historical incompatibility claims applied to high-heat laboratory conditions. Modern buffered serums work synergistically."
+    },
+    {
+      "a": "Niacinamide",
+      "b": "Salicylic Acid",
+      "level": "SAFE",
+      "recommendation": "Excellent synergistic pairing for pore control and sebum regulation",
+      "reason": "Niacinamide calms inflammation while BHA clears pore debris."
+    },
+    {
+      "a": "Hyaluronic Acid",
+      "b": "Retinol",
+      "level": "SAFE",
+      "recommendation": "Ideal pairing: apply Hyaluronic Acid to buffer and hydrate",
+      "reason": "Humectants replenish moisture drawn out by active retinization."
+    },
+    {
+      "a": "Ceramides",
+      "b": "Retinol",
+      "level": "SAFE",
+      "recommendation": "Highly recommended barrier-support pairing",
+      "reason": "Ceramides reinforce the intercellular matrix against potential retinoid irritation."
+    },
+    {
+      "a": "Azelaic Acid",
+      "b": "Niacinamide",
+      "level": "SAFE",
+      "recommendation": "Gentle dual-action for hyperpigmentation and redness",
+      "reason": "Both inhibit melanosome transfer and soothe erythema through non-competing mechanisms."
+    }
+  ],
+  "mandatory_pairings": [
+    {
+      "if_using": ["Retinol", "Glycolic Acid", "Salicylic Acid", "Lactic Acid", "AHA", "BHA", "Vitamin C"],
+      "must_have": "Sunscreen",
+      "routine": "AM",
+      "reason": "Photosensitizing actives increase UV vulnerability; broad-spectrum SPF 50+ is essential."
+    }
+  ],
+  "universal_safe": [
+    "Hyaluronic Acid",
+    "Ceramides",
+    "Peptides",
+    "Centella Asiatica (Cica)",
+    "Green Tea Extract",
+    "Squalane",
+    "Panthenol (Vitamin B5)",
+    "Allantoin"
+  ]
+}

@@ -1,0 +1,257 @@
+[
+  {
+    "_id": "691d5b0c4c03633730a1ab06",
+    "name": "Aqualogica",
+    "slug": "aqualogica",
+    "description": "Aqualogica is a hydration-focused skincare brand that blends clean, fruit-water science with active ingredients to deliver deep, lightweight moisture. Designed for Indian skin and climate, its formulas are vegan, cruelty-free, and free from toxins. Aqualogica helps balance hydration, brighten skin, and target concerns like dullness and dryness with refreshing, fast-absorbing textures.",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763531531/brands/hrrglpmuwriujkmwgry0.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191203/brands/banner/vszvkyiv4kjt7bfbulg1.png",
+        "link": "[\"\"]",
+        "_id": "6a3a146301c42ae46325a530"
+      }
+    ],
+    "count": 54
+  },
+  {
+    "_id": "6a55f3a725a9d5e92e1e0282",
+    "name": "Arata",
+    "slug": "arata",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1784030665/brands/logo/mxwczj3ja7qwnktfregc.png",
+    "banner": [],
+    "count": 19
+  },
+  {
+    "_id": "6a4781181c49ef00c435148f",
+    "name": "Asaya",
+    "slug": "asaya",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783071106/brands/logo/gcfs9urlekrinvcgrckw.png",
+    "banner": [],
+    "count": 19
+  },
+  {
+    "_id": "6a4de3821c49ef00c437d32d",
+    "name": "Be neude",
+    "slug": "be-neude",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783489409/brands/logo/yugspyff0wlmfq877ukh.png",
+    "banner": [],
+    "count": 9
+  },
+  {
+    "_id": "6a4df5ce1c49ef00c4380730",
+    "name": "Consious Chemist",
+    "slug": "consious-chemist",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783494094/brands/logo/e2yrcj9nrz00hanwn9ts.png",
+    "banner": [],
+    "count": 12
+  },
+  {
+    "_id": "68ad3953ae42591c8afc5bc4",
+    "name": "DOT & KEY",
+    "slug": "dot-key",
+    "description": "Dot & Key is a modern skincare brand known for its gentle, dermatologist-tested formulas that blend active ingredients with skin-loving botanicals. It focuses on hydration, brightening, barrier repair, and overall skin health, offering refreshing textures and effective results without harsh chemicals.",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763450528/brands/eb2eavo75b32oliksgtz.webp",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191264/brands/banner/v3rvhnp8sqzjfztzmovc.png",
+        "link": "[\"\"]",
+        "_id": "6a56226178fc121d97682d05"
+      }
+    ],
+    "count": 60
+  },
+  {
+    "_id": "68ac2ce885b90b286e0453bb",
+    "name": "Dr Sheth's",
+    "slug": "dr-sheth-s",
+    "description": "Dr. Sheth’s is a dermatologist-developed skincare brand formulated specifically for Indian skin. It uses potent actives—like acids, ceramides, peptides, and antioxidants—balanced with soothing ingredients to treat pigmentation, acne, tanning, and sensitivity. The brand focuses on scientific efficacy with gentle, skin-friendly formulations",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763450275/brands/ndavvx689dyik7chpkcx.webp",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191305/brands/banner/eczvjbvr2w72a0pmslwb.png",
+        "link": "[\"\"]",
+        "_id": "6a3a14c901c42ae46325b41d"
+      }
+    ],
+    "count": 50
+  },
+  {
+    "_id": "6a5da6c9ae9fb5189345ce00",
+    "name": "Foxtale",
+    "slug": "foxtale",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1784522574/brands/logo/o7vpqzmkuebhyb9j7coe.png",
+    "banner": [],
+    "count": 30
+  },
+  {
+    "_id": "6a4dee971c49ef00c437efea",
+    "name": "Gabit Skincare",
+    "slug": "gabit-skincare",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783492247/brands/logo/hkxhmh51j4hvxopfqgwe.png",
+    "banner": [],
+    "count": 8
+  },
+  {
+    "_id": "6a4c80a21c49ef00c436caf8",
+    "name": "Hyphen",
+    "slug": "hyphen",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783398561/brands/logo/xa1qe8p9nxq7xxp4llyh.png",
+    "banner": [],
+    "count": 37
+  },
+  {
+    "_id": "68ac2e6385b90b286e0453c3",
+    "name": "Lakme",
+    "slug": "lakme",
+    "description": "Lakmé is one of India’s most iconic beauty brands, offering a wide range of makeup and skincare tailored to Indian skin tones and climate. From long-wear foundations to daily skincare essentials, Lakmé blends fashion, innovation, and performance—supported by its runway heritage and trusted formulations",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1769515199/brands/logo/kghgvygahhmtl3btv0wb.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191286/brands/banner/hz0dsfjddjlwekimrhqm.png",
+        "link": "[\"\"]",
+        "_id": "6a3a14b701c42ae46325b2af"
+      }
+    ],
+    "count": 15
+  },
+  {
+    "_id": "691d5e514c03633730a1fa1c",
+    "name": "Mars",
+    "slug": "mars",
+    "description": "Welcome to MARS Cosmetics, where our vision is to make beauty more affordable and accessible for everyone. We work hard to optimize our entire value chain, ensuring that our products are of the highest quality without breaking the bank. Our makeup products are specially crafted to suit the unique skin conditions of Indian women.\r\n\r\n\r\nAt MARS Cosmetics, we offer a wide range of products to help you create your desired look. Our collection includes everything you need for your eyes, face, lips, and tools. From eyeshadow palettes and mascaras to lipsticks and brushes, we have it all.\r\n\r\n\r\nWe also have a selection of face products such as foundation, concealer, and highlighter to help you achieve a flawless complexion. Whether you're a makeup enthusiast or a beginner, our products are designed to meet your needs and enhance your natural beauty. Shop with us and join our community of makeup lovers on social media.\r\n\r\n\r\nFollow us on Facebook, Twitter, Instagram, Pinterest, and YouTube to stay updated with the latest trends and new arrivals. Visit our website or contact us at support@marscosmetics. in for any assistance.\r\n\r\n\r\nStart your beauty journey with MARS Cosmetics today!",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763532367/brands/t5yszq1lempinapt1utp.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191155/brands/banner/m5y5dg7fivqhgs1ypgsq.png",
+        "link": "[\"\"]",
+        "_id": "6a3a143401c42ae46325a0e3"
+      }
+    ],
+    "count": 18
+  },
+  {
+    "_id": "691d66614c03633730a26214",
+    "name": "Minimalist",
+    "slug": "minimalist",
+    "description": "Minimalist is a science-backed skincare brand focused on transparency, clean formulations, and high-performance active ingredients. Known for its no-nonsense approach, the brand uses dermatologist-tested, ingredient-first formulas to target concerns like acne, pigmentation, aging, and hydration. With clear labelling and effective concentrations, Minimalist helps users build simple, result-oriented routines grounded in modern skin science.",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763534432/brands/c3wox9el1lhhqm7breml.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191136/brands/banner/x4g4yfv1fzbuon8cgebx.png",
+        "link": "[\"\"]",
+        "_id": "6a3a142001c42ae46325a018"
+      }
+    ],
+    "count": 36
+  },
+  {
+    "_id": "6a4ca9bd1c49ef00c43720c9",
+    "name": "Moody",
+    "slug": "moody",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783409084/brands/logo/s0do9s97qbhaf2tcrvfz.png",
+    "banner": [],
+    "count": 38
+  },
+  {
+    "_id": "6a4f3259b770864d759f0100",
+    "name": "NEESH",
+    "slug": "neesh",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783575128/brands/logo/g9p6wnfwudql8xdxd19k.png",
+    "banner": [],
+    "count": 40
+  },
+  {
+    "_id": "691d5c2c4c03633730a1b148",
+    "name": "Pilgrim",
+    "slug": "pilgrim",
+    "description": "Pilgrim is a global-beauty inspired skincare and haircare brand that brings rituals and ingredients from around the world—like Korean, French, and Spanish beauty—into modern, science-backed formulas. 100% vegan and cruelty-free, Pilgrim focuses on clean, effective, and sensorial products that target concerns such as hydration, brightening, anti-aging, and hair repair while delivering a luxurious self-care experience.",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763531818/brands/oitx01dg58hdnusjppqp.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191177/brands/banner/aikx4cp8gp0q6nm1rlzc.png",
+        "link": "[\"\"]",
+        "_id": "6a3a144a01c42ae46325a145"
+      }
+    ],
+    "count": 15
+  },
+  {
+    "_id": "691d53054c03633730a15802",
+    "name": "Plum",
+    "slug": "plum",
+    "description": "Plum Goodness is India's 1st 100% vegan beauty brand that believes in goodness that delivers. They offer a wide range of cruelty-free skincare, makeup, haircare, and bodycare products. Their formulations combine natural ingredients with science-backed actives, ensuring products that are not only effective but also kind to our planet.\r\n\r\n\r\nPlum Goodness is committed to sustainability and has its own recycling program, ensuring that their packaging is environmentally friendly. They are PETA certified for being animal test-free and do not use any animal ingredients in their products. Plum Goodness constantly conducts extensive research to find vegan alternatives and innovative solutions for their formulations.\r\n\r\n\r\nWith over a decade of experience, Plum Goodness has expanded globally and is now present in 15 countries. Their dedication to creating high-quality vegan beauty products has earned them numerous awards and recognition. Join the Plum Goodness family and experience the goodness that delivers",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763530392/brands/ddutxvnljjomfkq55tpc.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191244/brands/banner/lfngbxv0vivd3wmpdx0v.png",
+        "link": "[\"\"]",
+        "_id": "6a3a148c01c42ae46325aa04"
+      }
+    ],
+    "count": 54
+  },
+  {
+    "_id": "695f3ea052380b482afd18e0",
+    "name": "Swiss Beauty",
+    "slug": "swiss-beauty",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1767849631/brands/logo/coeioulszddw1jnidgaa.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191119/brands/banner/q8syhwddn5tb0vds1dma.png",
+        "link": "[\"\"]",
+        "_id": "6a56221478fc121d97682c81"
+      }
+    ],
+    "count": 46
+  },
+  {
+    "_id": "691d584d4c03633730a1a525",
+    "name": "The Derma Co",
+    "slug": "the-derma-co",
+    "description": "The Derma Co is a dermatologist-backed skincare brand offering science-based, active-ingredient formulas to treat concerns like acne, pigmentation, and aging with targeted solutions.",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1763530828/brands/dudzxfkm2brfhfvekooj.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191221/brands/banner/uv3umivpdt2tfe1ckyb1.png",
+        "link": "[\"\"]",
+        "_id": "6a3a147601c42ae46325a5ac"
+      }
+    ],
+    "count": 83
+  },
+  {
+    "_id": "6973230d38dcec44bbd76bea",
+    "name": "Wish Care",
+    "slug": "wish-care",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1769153292/brands/logo/xf0mogfzv2eins0j6y4m.png",
+    "banner": [
+      {
+        "url": "https://res.cloudinary.com/dekngswix/image/upload/v1782191085/brands/banner/ebn14jypvzolib8llkia.png",
+        "link": "[\"\"]",
+        "_id": "6aaceac6e1ca181018055389"
+      }
+    ],
+    "count": 8
+  },
+  {
+    "_id": "6a4896db1c49ef00c4359f82",
+    "name": "kiro beauty",
+    "slug": "kiro-beauty",
+    "description": "",
+    "logo": "https://res.cloudinary.com/dekngswix/image/upload/v1783142187/brands/logo/cccgatcicqyttbpojlsr.png",
+    "banner": [],
+    "count": 29
+  }
+]

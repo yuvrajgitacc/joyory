@@ -1,0 +1,89 @@
+{
+  "success": true,
+  "tones": [
+    {
+      "_id": "68aeff7ad02e0d34f80701f3",
+      "key": "fair",
+      "name": "Fair",
+      "swatchHex": "#f7cbb9",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985203/tones/avbkntnuzgyannfxi53c.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985204/tones/ff647clkvcaazvul95tm.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985205/tones/loayrhd06fv6dikugbrr.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985207/tones/iwyobasyja6gw9nrisdn.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985207/tones/apc36jidnnfnp2ky5eik.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985209/tones/kli1bdkwrsvadoat2w3d.png"
+      ]
+    },
+    {
+      "_id": "6948cf6eef01a33f27127146",
+      "key": "light",
+      "name": "Light",
+      "swatchHex": "F2F8ED",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985256/tones/lov4cyuvoyc9ggeesq0b.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985257/tones/wsvf3od4nvf4sxzwjlxr.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985258/tones/tjvdbv0zfhgeflnlmkdd.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985259/tones/xpe6kce5sozj9uj0lgtj.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985260/tones/u7qt9m1j8picya0rdxhi.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985261/tones/cnoheciuwubxepu0jgdc.png"
+      ]
+    },
+    {
+      "_id": "68aef1d22e4d43f8b788ffa5",
+      "key": "light-medium",
+      "name": "Light Medium",
+      "swatchHex": "#c89f8f",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985295/tones/tji8rjbxntdow6w2scv6.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985296/tones/gn06dkcjwzk6vnhyxwum.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985297/tones/h0kif4n2o4mxoqwbry3z.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985298/tones/edkuix3gxymxvhca2ngu.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985299/tones/p9a5bojoifnzaqgivfox.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985300/tones/to0j95zpkistpiaip9aj.png"
+      ]
+    },
+    {
+      "_id": "68aef1d22e4d43f8b788ffa6",
+      "key": "medium",
+      "name": "Medium",
+      "swatchHex": "#6f42c1",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985330/tones/ph0m3xepxmnk6zlirl0z.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985331/tones/irwy9gwvca9q1lck4le5.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985332/tones/czknh6edxdcnlp3fob3s.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985334/tones/ptcbhphhwrnofzlkzvo9.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985336/tones/fmombwv3dv9qm3qugupx.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985337/tones/kowtuupw9beqvyc0hwff.png"
+      ]
+    },
+    {
+      "_id": "68aef1d22e4d43f8b788ffa7",
+      "key": "medium-deep",
+      "name": "Medium Deep",
+      "swatchHex": "#6f42c1",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985366/tones/qj9ntedkvxz6fphghg08.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985367/tones/eojt3clc1fz7ey2vd3vm.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985368/tones/kqtq3x1bwte1jajxgxnz.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985369/tones/db0dodfligysnj7uyap0.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985370/tones/jdwunvhrp18eluu1gbzs.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985371/tones/bsrn8isec71lroqxvhvr.png"
+      ]
+    },
+    {
+      "_id": "6a3e3ae1c42956c01396c8f2",
+      "key": "deep",
+      "name": "deep",
+      "swatchHex": "#6f42c1",
+      "heroImages": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985399/tones/uij0ve0fsj6fukgtr4ho.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985400/tones/izrolr8xsix6uxvqwviw.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985401/tones/ngtlp5d2jlmgawlb3unb.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985402/tones/ifna6lz4k0b3r1q52afm.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985403/tones/fup8zux1sjsxnjkeeggw.png",
+        "https://res.cloudinary.com/dekngswix/image/upload/v1782985404/tones/u6vfisvccbilgtaqvl00.png"
+      ]
+    }
+  ]
+}

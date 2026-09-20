@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "categories": [
+    {
+      "_id": "6958e5df81a0364d6ad9c58e",
+      "name": "Makeup",
+      "slug": "makeup",
+      "thumbnailImage": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1783577811/categories/thumbnail/uotp9cme60mf4djv0pbv.png"
+      ]
+    },
+    {
+      "_id": "69367dd586d1d5dba80dd000",
+      "name": "Skin",
+      "slug": "skin",
+      "thumbnailImage": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1783577911/categories/thumbnail/mj0mpxnw1fp2lddhvop3.png"
+      ]
+    },
+    {
+      "_id": "6a4b72491c49ef00c4367fa0",
+      "name": "Bath & Body",
+      "slug": "bath-and-body",
+      "thumbnailImage": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1783577840/categories/thumbnail/s20zirw3mhjqto4recye.png"
+      ]
+    },
+    {
+      "_id": "6a4f29e9b770864d759ef5d3",
+      "name": "Fragrances",
+      "slug": "fragrances",
+      "thumbnailImage": [
+        "https://res.cloudinary.com/dekngswix/image/upload/v1783577874/categories/thumbnail/pv5soq7v07wjnyuwmrcj.png"
+      ]
+    }
+  ]
+}

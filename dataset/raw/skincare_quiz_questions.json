@@ -1,0 +1,319 @@
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "69b39d9a8904d79cb0cf5935",
+      "questionText": "Most of the time, my skin feels... Pick one",
+      "options": [
+        {
+          "label": "Dry: flaky & tight",
+          "value": "dry",
+          "mappingField": "skinType",
+          "_id": "69b39d9a8904d79cb0cf5936",
+          "subtext": "Produces less natural oil, which can make the skin feel tight, rough, or flaky. Often needs extra hydration to maintain softness and glow."
+        },
+        {
+          "label": "Oily: greasy & shiny",
+          "value": "oily",
+          "mappingField": "skinType",
+          "_id": "69b39d9a8904d79cb0cf5937",
+          "subtext": "Produces excess natural oil (sebum), which can make the skin look shiny or feel greasy, especially on the forehead, nose, and chin. More prone to clogged pores and breakouts."
+        },
+        {
+          "label": "Combination: oily T-zone",
+          "value": "combination",
+          "mappingField": "skinType",
+          "_id": "69b39d9a8904d79cb0cf5938",
+          "subtext": "A mix of skin types where the T-zone (forehead, nose, and chin) is oily, while the cheeks and other areas may feel normal or dry. Needs balanced care for different areas of the face."
+        },
+        {
+          "label": "Sensitive",
+          "value": "sensitive",
+          "mappingField": "skinType",
+          "_id": "69b39d9a8904d79cb0cf5939",
+          "subtext": " Skin that reacts easily to products, weather, or environmental factors. It may feel itchy, red, irritated, or prone to burning sensations, so gentle and soothing products work best."
+        },
+        {
+          "label": "Normal",
+          "value": "normal",
+          "mappingField": "skinType",
+          "_id": "69b39d9a8904d79cb0cf593a",
+          "subtext": "Well-balanced skin that is neither too oily nor too dry. It usually feels smooth, comfortable, and healthy with minimal sensitivity or breakouts."
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 1,
+      "isActive": true,
+      "createdAt": "2026-03-13T05:16:10.507Z",
+      "updatedAt": "2026-03-13T11:28:39.566Z",
+      "__v": 0
+    },
+    {
+      "_id": "69b39d9a8904d79cb0cf593b",
+      "questionText": "What’s Your Skin Concern?",
+      "options": [
+        {
+          "label": "Acne-Prone",
+          "value": "acne",
+          "mappingField": "concern",
+          "_id": "69b39d9a8904d79cb0cf593c",
+          "subtext": "Skin that is more likely to develop breakouts, clogged pores, blackheads, or pimples. Needs lightweight, non-comedogenic products that won’t block pores or trigger irritation."
+        },
+        {
+          "label": "Dark spots",
+          "value": "pigmentation",
+          "mappingField": "concern",
+          "_id": "69b39d9a8904d79cb0cf593d",
+          "subtext": "Uneven patches of darker skin that appear due to sun exposure, acne marks, or pigmentation. Often needs brightening and spot-correcting ingredients to even out skin tone."
+        },
+        {
+          "label": "Dullness",
+          "value": "dullness",
+          "mappingField": "concern",
+          "_id": "69b39d9a8904d79cb0cf593e",
+          "subtext": "Skin that looks tired, flat, or lacking natural glow. Usually caused by dead skin buildup, dehydration, or stress, and benefits from gentle exfoliation and hydration."
+        },
+        {
+          "label": "Dryness",
+          "value": "dryness",
+          "mappingField": "concern",
+          "_id": "69b39d9a8904d79cb0cf593f",
+          "subtext": "Skin that feels rough, tight, or flaky due to a lack of moisture. It often needs nourishing and deeply hydrating products to restore softness and comfort."
+        },
+        {
+          "label": "Redness",
+          "value": "redness",
+          "mappingField": "concern",
+          "_id": "69b39d9a8904d79cb0cf5940",
+          "subtext": "Skin that appears flushed, irritated, or uneven in tone. Often linked to sensitivity, inflammation, or environmental triggers and benefits from calming and soothing ingredients."
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 2,
+      "isActive": true,
+      "createdAt": "2026-03-13T05:16:10.507Z",
+      "updatedAt": "2026-03-13T11:33:35.171Z",
+      "__v": 0
+    },
+    {
+      "_id": "69b3f8a9e6904c89c5fe3343",
+      "questionText": "What Are You Looking For?",
+      "description": "Select the type of skincare product you want recommendations for.",
+      "options": [
+        {
+          "label": "Cleanser",
+          "subtext": "A skincare product used to remove dirt, oil, makeup, and impurities from the skin. It keeps pores clear and prepares your skin for the rest of your routine.",
+          "value": "cleanser",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3344"
+        },
+        {
+          "label": "Moisturizer",
+          "subtext": "Helps lock moisture into the skin, keeping it soft, smooth, and hydrated throughout the day.",
+          "value": "moisturizer",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3345"
+        },
+        {
+          "label": "Serum",
+          "subtext": "A concentrated skincare product designed to target specific skin concerns like dullness, aging, or pigmentation.",
+          "value": "serum",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3346"
+        },
+        {
+          "label": "Sunscreen",
+          "subtext": "Protects the skin from harmful UV rays that cause sunburn, premature aging, and pigmentation.",
+          "value": "sunscreen",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3347"
+        },
+        {
+          "label": "Toner",
+          "subtext": "A lightweight liquid that refreshes the skin, balances pH levels, and prepares it for better absorption of skincare products.",
+          "value": "toner",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3348"
+        },
+        {
+          "label": "Eye Cream",
+          "subtext": "Designed specifically for the delicate skin around the eyes to reduce dark circles, puffiness, and fine lines.",
+          "value": "eyeCream",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe3349"
+        },
+        {
+          "label": "Lip Care",
+          "subtext": "Products formulated to hydrate, repair, and protect dry or chapped lips.",
+          "value": "lipCare",
+          "mappingField": "productType",
+          "_id": "69b3f8a9e6904c89c5fe334a"
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 3,
+      "isActive": true,
+      "createdAt": "2026-03-13T11:44:41.318Z",
+      "updatedAt": "2026-03-13T11:44:41.318Z",
+      "__v": 0
+    },
+    {
+      "_id": "69b3f8c0e6904c89c5fe3351",
+      "questionText": "Any Formulation Preference?",
+      "description": "Choose the texture or formulation you prefer for your skincare product.",
+      "options": [
+        {
+          "label": "Gel / Water-Based",
+          "subtext": "A lightweight, fast-absorbing formula that feels fresh on the skin. Ideal for oily or acne-prone skin as it hydrates without clogging pores.",
+          "value": "gel",
+          "mappingField": "formulation",
+          "_id": "69b3f8c0e6904c89c5fe3352"
+        },
+        {
+          "label": "Cream / Rich",
+          "subtext": "A thicker formula that provides deep hydration and nourishment. Perfect for dry or dehydrated skin.",
+          "value": "cream",
+          "mappingField": "formulation",
+          "_id": "69b3f8c0e6904c89c5fe3353"
+        },
+        {
+          "label": "Lightweight Lotion",
+          "subtext": "A balanced formula that offers hydration without heaviness. Suitable for normal or combination skin.",
+          "value": "lotion",
+          "mappingField": "formulation",
+          "_id": "69b3f8c0e6904c89c5fe3354"
+        },
+        {
+          "label": "Oil / Balm",
+          "subtext": "A rich and nourishing formula that seals in moisture and helps repair dry or damaged skin.",
+          "value": "oil",
+          "mappingField": "formulation",
+          "_id": "69b3f8c0e6904c89c5fe3355"
+        },
+        {
+          "label": "No Preference",
+          "subtext": "You are open to any formulation that works best for your skin type.",
+          "value": "noPreference",
+          "mappingField": "formulation",
+          "_id": "69b3f8c0e6904c89c5fe3356"
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 4,
+      "isActive": true,
+      "createdAt": "2026-03-13T11:45:04.800Z",
+      "updatedAt": "2026-03-13T11:45:04.800Z",
+      "__v": 0
+    },
+    {
+      "_id": "69b3f8cbe6904c89c5fe3358",
+      "questionText": "Any Ingredients Preference?",
+      "description": "Select ingredients you prefer in your skincare products.",
+      "options": [
+        {
+          "label": "Vitamin C",
+          "subtext": "Helps brighten the skin, reduce dullness, and improve uneven tone while protecting from environmental damage.",
+          "value": "vitaminC",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe3359"
+        },
+        {
+          "label": "Hyaluronic Acid",
+          "subtext": "A powerful hydrating ingredient that helps the skin retain moisture and appear plump and smooth.",
+          "value": "hyaluronicAcid",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335a"
+        },
+        {
+          "label": "Niacinamide",
+          "subtext": "Helps control oil, reduce enlarged pores, improve skin texture, and brighten the complexion.",
+          "value": "niacinamide",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335b"
+        },
+        {
+          "label": "Retinol",
+          "subtext": "A powerful anti-aging ingredient that improves skin texture, reduces wrinkles, and boosts collagen production.",
+          "value": "retinol",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335c"
+        },
+        {
+          "label": "Salicylic Acid",
+          "subtext": "An exfoliating ingredient that unclogs pores, reduces acne, and helps prevent future breakouts.",
+          "value": "salicylicAcid",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335d"
+        },
+        {
+          "label": "Aloe Vera",
+          "subtext": "A soothing natural ingredient known for calming irritated skin and providing gentle hydration.",
+          "value": "aloeVera",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335e"
+        },
+        {
+          "label": "No Preference",
+          "subtext": "You are open to products with any ingredient that suits your skin needs.",
+          "value": "noPreference",
+          "mappingField": "ingredient",
+          "_id": "69b3f8cbe6904c89c5fe335f"
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 5,
+      "isActive": true,
+      "createdAt": "2026-03-13T11:45:15.240Z",
+      "updatedAt": "2026-03-13T11:45:15.240Z",
+      "__v": 0
+    },
+    {
+      "_id": "69b3f8f0ae387e655b011483",
+      "questionText": "What Is Your Budget?",
+      "description": "Select your preferred price range for skincare products.",
+      "options": [
+        {
+          "label": "Under Rs 500",
+          "subtext": "Affordable skincare products within a budget-friendly range.",
+          "value": "under500",
+          "mappingField": "budget",
+          "_id": "69b3f8f0ae387e655b011484"
+        },
+        {
+          "label": "Rs 500 - Rs 1000",
+          "subtext": "Mid-range skincare products offering a balance between price and quality.",
+          "value": "500to1000",
+          "mappingField": "budget",
+          "_id": "69b3f8f0ae387e655b011485"
+        },
+        {
+          "label": "Rs 1000 - Rs 2000",
+          "subtext": "Premium skincare products with advanced formulations and ingredients.",
+          "value": "1000to2000",
+          "mappingField": "budget",
+          "_id": "69b3f8f0ae387e655b011486"
+        },
+        {
+          "label": "Rs 2000+",
+          "subtext": "High-end skincare products with luxury formulations and brand value.",
+          "value": "above2000",
+          "mappingField": "budget",
+          "_id": "69b3f8f0ae387e655b011487"
+        },
+        {
+          "label": "No Preference",
+          "subtext": "You are open to skincare products across all price ranges.",
+          "value": "noPreference",
+          "mappingField": "budget",
+          "_id": "69b3f8f0ae387e655b011488"
+        }
+      ],
+      "allowMultiSelect": false,
+      "displayOrder": 6,
+      "isActive": true,
+      "createdAt": "2026-03-13T11:45:52.620Z",
+      "updatedAt": "2026-03-13T11:45:52.620Z",
+      "__v": 0
+    }
+  ]
+}
