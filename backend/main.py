@@ -66,7 +66,8 @@ async def analyze_skin(
     file: UploadFile = File(...),
     session_id: Optional[str] = Form("demo_user_1"),
     budget: Optional[str] = Form("all"),
-    skin_type: Optional[str] = Form(None)
+    skin_type: Optional[str] = Form(None),
+    scan_mode: Optional[str] = Form("normal")
 ):
     try:
         contents = await file.read()
@@ -76,11 +77,13 @@ async def analyze_skin(
         user_profile = {
             "session_id": session_id,
             "budget": budget,
-            "skin_type": skin_type if skin_type and skin_type != "unknown" else None
+            "skin_type": skin_type if skin_type and skin_type != "unknown" else None,
+            "scan_mode": scan_mode
         }
 
         result = await orchestrator.run(image_bytes=contents, user_profile=user_profile)
         return result
+
     except Exception as e:
         logger.exception(f"Error during skin analysis: {e}")
         raise HTTPException(status_code=500, detail=str(e))

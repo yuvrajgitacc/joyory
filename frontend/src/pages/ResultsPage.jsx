@@ -49,7 +49,17 @@ export default function ResultsPage({ analysisResult, onResetScan }) {
           <p className="text-xs text-slate-400 mt-1">
             Formulated for <strong>{vision?.skin_type || 'Combination'}</strong> profile • Verified active compatibility • Evaluated across <strong>{totalEvaluated}</strong> Joyory products
           </p>
+          <div className="flex items-center gap-2 mt-2">
+            <span className={`text-[11px] px-2.5 py-0.5 rounded-full font-medium border ${
+              vision?.scan_mode === 'advance'
+                ? 'bg-amber-500/15 text-amber-300 border-amber-500/30'
+                : 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30'
+            }`}>
+              {vision?.scanner_label || (vision?.scan_mode === 'advance' ? 'Advance Multimodal Scan' : 'Standard Neural AI Scan')}
+            </span>
+          </div>
         </div>
+
 
         <div className="flex items-center gap-3">
           <button

@@ -28,8 +28,10 @@ class AgentOrchestrator:
         budget_pref = user_profile.get("budget", "all")
         user_override_skin_type = user_profile.get("skin_type")
 
+        scan_mode = user_profile.get("scan_mode", "normal")
+
         # Step 1: Vision Module (Tone + ONNX Signals + Cosmetic Classification)
-        vision_result = await vision_agent.analyze(image_bytes)
+        vision_result = await vision_agent.analyze(image_bytes, scan_mode=scan_mode)
         if vision_result.get("status") == "error":
             return {
                 "status": "error",
@@ -40,6 +42,7 @@ class AgentOrchestrator:
 
         skin_type = user_override_skin_type if user_override_skin_type else vision_result.get("skin_type", "Combination")
         concerns = vision_result.get("primary_concerns", ["Acne & Blemishes", "Sun Protection"])
+
 
 
         # Step 2: Gemini Narrator Agent (Warm, human conversational description based on raw model numbers)

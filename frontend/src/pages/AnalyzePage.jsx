@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Camera, UploadCloud, Sliders, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
+import { Sparkles, Camera, UploadCloud, Sliders, ShieldCheck, ArrowRight, Loader2, Zap } from 'lucide-react';
 import FileUpload from '../components/FileUpload';
 import CameraCapture from '../components/CameraCapture';
 
@@ -20,13 +20,11 @@ export default function AnalyzePage({ onAnalysisComplete }) {
   };
 
   const handleUsePreset = async (presetType) => {
-    // Generate a simple test blob representing the selected face type
     const canvas = document.createElement('canvas');
     canvas.width = 300;
     canvas.height = 300;
     const ctx = canvas.getContext('2d');
     
-    // Aesthetic simulated face tone
     if (presetType === 'acne') {
       ctx.fillStyle = '#e2b597';
       setSkinType('Oily');
@@ -49,8 +47,7 @@ export default function AnalyzePage({ onAnalysisComplete }) {
     }, 'image/jpeg');
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (mode = 'normal') => {
     if (!selectedFile) {
       setErrorMessage("Please capture or upload a selfie, or pick a demo pitch preset.");
       return;
@@ -59,17 +56,23 @@ export default function AnalyzePage({ onAnalysisComplete }) {
     setIsScanning(true);
     setErrorMessage(null);
 
-    // Sequential simulation of the 5 modules for visual feedback
-    setScanStep("1/4: Analyzing Skin Tone & Monk Palette...");
-    await new Promise((r) => setTimeout(r, 600));
-
-    setScanStep("2/4: Computing Image-Derived Skin Signals (ONNX)...");
-    await new Promise((r) => setTimeout(r, 700));
-
-    setScanStep("3/4: Auditing Joyory Catalog & Active Safety Rules...");
-    await new Promise((r) => setTimeout(r, 600));
-
-    setScanStep("4/4: Sequencing Conflict-Free AM/PM Routine...");
+    if (mode === 'advance') {
+      setScanStep("1/4: Initializing Multimodal Deep Vision (Gemini 2.5 Flash + YOLOv8s)...");
+      await new Promise((r) => setTimeout(r, 600));
+      setScanStep("2/4: Cross-Validating Neural Signals with Gemini Vision Pixels...");
+      await new Promise((r) => setTimeout(r, 700));
+      setScanStep("3/4: Structuring Grounded Clinical Telemetry & Active Safety...");
+      await new Promise((r) => setTimeout(r, 600));
+      setScanStep("4/4: Grok Selecting Synergistic Joyory Formulations...");
+    } else {
+      setScanStep("1/4: Executing Local YOLOv8s ONNX Blemish & Signal Extraction...");
+      await new Promise((r) => setTimeout(r, 600));
+      setScanStep("2/4: Computing Central Face Tone & Moisture Indices (CPU)...");
+      await new Promise((r) => setTimeout(r, 700));
+      setScanStep("3/4: Passing Model Telemetry to Gemini Narrator (No image sent)...");
+      await new Promise((r) => setTimeout(r, 600));
+      setScanStep("4/4: Grok Regimen Matching across 498 Joyory Products...");
+    }
 
     try {
       const formData = new FormData();
@@ -77,6 +80,7 @@ export default function AnalyzePage({ onAnalysisComplete }) {
       formData.append('budget', budget);
       formData.append('skin_type', skinType);
       formData.append('session_id', 'demo_user_1');
+      formData.append('scan_mode', mode);
 
       const response = await fetch('/api/analyze', {
         method: 'POST',
@@ -100,7 +104,6 @@ export default function AnalyzePage({ onAnalysisComplete }) {
       setIsScanning(false);
       setScanStep('');
     }
-
   };
 
   return (
@@ -113,69 +116,94 @@ export default function AnalyzePage({ onAnalysisComplete }) {
         <h2 className="text-3xl font-extrabold text-white font-serif">
           Facial Surface Characterization
         </h2>
-        <p className="text-xs text-slate-400 max-w-md mx-auto">
-          Capture or upload a clear, front-facing portrait to initiate our 5-engine multi-agent evaluation.
+        <p className="text-xs text-slate-400 max-w-lg mx-auto">
+          Choose between local edge neural scanning (CPU models) or advanced multimodal vision (Gemini 2.5 Flash).
         </p>
       </div>
 
-      {/* Input Mode Selector */}
-      <div className="flex bg-slate-900 p-1.5 rounded-2xl border border-slate-800 max-w-xs mx-auto">
-        <button
-          type="button"
-          onClick={() => setInputMode('upload')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-xs font-bold transition-all ${
-            inputMode === 'upload'
-              ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
-              : 'text-slate-400 hover:text-white'
-          }`}
-        >
-          <UploadCloud className="w-4 h-4" />
-          <span>Upload File</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setInputMode('camera')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-xl text-xs font-bold transition-all ${
-            inputMode === 'camera'
-              ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
-              : 'text-slate-400 hover:text-white'
-          }`}
-        >
-          <Camera className="w-4 h-4" />
-          <span>Live Selfie</span>
-        </button>
+      {/* Mode selection tabs */}
+      <div className="flex justify-center">
+        <div className="bg-slate-900/80 p-1 rounded-2xl border border-slate-800 flex gap-1">
+          <button
+            type="button"
+            onClick={() => setInputMode('upload')}
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              inputMode === 'upload'
+                ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
+                : 'text-slate-400 hover:text-white'
+            }`}
+          >
+            <UploadCloud className="w-4 h-4" />
+            <span>Upload Photo</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setInputMode('camera')}
+            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+              inputMode === 'camera'
+                ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
+                : 'text-slate-400 hover:text-white'
+            }`}
+          >
+            <Camera className="w-4 h-4" />
+            <span>Live Camera</span>
+          </button>
+        </div>
       </div>
 
-      {/* Image Input Area */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl backdrop-blur-md">
+      {/* Input section */}
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-md">
         {inputMode === 'upload' ? (
-          <FileUpload
-            onFileSelected={handleFileSelected}
+          <FileUpload 
+            onFileSelected={handleFileSelected} 
             previewUrl={previewUrl}
-            onUsePreset={handleUsePreset}
           />
         ) : (
-          <CameraCapture
-            onCapture={handleFileSelected}
+          <CameraCapture 
+            onCapture={handleFileSelected} 
             previewUrl={previewUrl}
           />
         )}
-      </div>
 
-      {/* Optional User Guidance / Budget Filter */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5">
-        <div className="flex items-center gap-2">
-          <Sliders className="w-4 h-4 text-rose-400" />
-          <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-            Shopping Preferences & Budget Criteria
-          </h3>
+        {/* Demo pitch presets */}
+        <div className="mt-6 pt-5 border-t border-slate-800/80">
+          <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
+            <span className="font-semibold uppercase tracking-wider text-[10px]">
+              Quick Demo Pitch Presets
+            </span>
+            <span>No real face handy? Pick one:</span>
+          </div>
+          <div className="grid grid-cols-3 gap-2 text-xs">
+            <button
+              type="button"
+              onClick={() => handleUsePreset('acne')}
+              className="py-2 px-3 rounded-xl bg-slate-950/80 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-colors text-center"
+            >
+              🔥 Oily / Acne Target
+            </button>
+            <button
+              type="button"
+              onClick={() => handleUsePreset('dry')}
+              className="py-2 px-3 rounded-xl bg-slate-950/80 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-colors text-center"
+            >
+              ❄️ Dry / Barrier Target
+            </button>
+            <button
+              type="button"
+              onClick={() => handleUsePreset('combination')}
+              className="py-2 px-3 rounded-xl bg-slate-950/80 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-colors text-center"
+            >
+              ⚖️ Combination T-Zone
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {/* Budget */}
+        {/* Preferences controls */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6 pt-5 border-t border-slate-800/80">
+          {/* Budget tier */}
           <div>
             <label className="text-xs font-semibold text-slate-300 block mb-1.5">
-              Budget Target (Per Product)
+              Budget Philosophy
             </label>
             <select
               value={budget}
@@ -217,28 +245,56 @@ export default function AnalyzePage({ onAnalysisComplete }) {
         </div>
       )}
 
-      {/* Scan Button & Scanning Overlay */}
-      <div className="text-center">
+      {/* Scan Buttons & Scanning Overlay */}
+      <div className="space-y-3">
         {isScanning ? (
-          <div className="p-6 rounded-2xl bg-slate-900 border border-rose-500/40 space-y-3 animate-pulse">
+          <div className="p-6 rounded-2xl bg-slate-900 border border-rose-500/40 space-y-3 animate-pulse text-center">
             <Loader2 className="w-8 h-8 text-rose-400 animate-spin mx-auto" />
             <p className="text-sm font-bold text-white font-mono">{scanStep}</p>
-            <p className="text-xs text-slate-400">Harmonizing vision signals with Joyory product safety rules...</p>
+            <p className="text-xs text-slate-400">Harmonizing neural signals with Joyory active safety rules...</p>
           </div>
         ) : (
-          <button
-            onClick={handleSubmit}
-            disabled={!selectedFile}
-            className={`w-full sm:w-auto px-10 py-4 rounded-2xl font-bold text-sm flex items-center justify-center gap-2.5 mx-auto transition-all shadow-xl ${
-              selectedFile
-                ? 'bg-gradient-to-r from-rose-500 via-pink-600 to-amber-500 hover:from-rose-600 hover:to-pink-700 text-white shadow-rose-500/25 cursor-pointer hover:scale-105'
-                : 'bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700'
-            }`}
-          >
-            <Sparkles className="w-4 h-4 text-amber-200" />
-            <span>Generate Personalized Regimen & Safety Audit</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Mode 1: Standard Neural Scan */}
+            <button
+              type="button"
+              onClick={() => handleSubmit('normal')}
+              disabled={!selectedFile}
+              className={`p-4 rounded-2xl font-bold text-sm flex flex-col items-center justify-center gap-1.5 transition-all shadow-xl text-center ${
+                selectedFile
+                  ? 'bg-slate-900 hover:bg-slate-850 text-white border border-rose-500/40 hover:border-rose-400 shadow-rose-500/10 cursor-pointer hover:scale-[1.02]'
+                  : 'bg-slate-900/60 text-slate-500 cursor-not-allowed border border-slate-800'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-rose-400" />
+                <span className="text-white font-bold">Standard Neural AI Scan</span>
+              </div>
+              <span className="text-[11px] text-slate-400 font-normal">
+                Models scan image • Gemini narrates final JSON
+              </span>
+            </button>
+
+            {/* Mode 2: Advance Multimodal Scan */}
+            <button
+              type="button"
+              onClick={() => handleSubmit('advance')}
+              disabled={!selectedFile}
+              className={`p-4 rounded-2xl font-bold text-sm flex flex-col items-center justify-center gap-1.5 transition-all shadow-xl text-center ${
+                selectedFile
+                  ? 'bg-gradient-to-r from-rose-500 via-pink-600 to-amber-500 hover:from-rose-600 hover:to-pink-700 text-white shadow-rose-500/25 cursor-pointer hover:scale-[1.02]'
+                  : 'bg-slate-900/60 text-slate-500 cursor-not-allowed border border-slate-800'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-amber-200" />
+                <span className="text-white font-bold">Advance Multimodal Scan</span>
+              </div>
+              <span className="text-[11px] text-rose-100 font-normal">
+                Gemini 2.5 Flash Vision scans image + Models
+              </span>
+            </button>
+          </div>
         )}
       </div>
     </div>
