@@ -18,7 +18,8 @@ PRODUCT_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 load_dotenv(BASE_DIR / ".env")
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME", "gemini-2.5-flash")
+GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME", "gemini-3.1-flash-lite")
+
 
 # Model Paths
 ONNX_SIGNALS_PATH = MODELS_DIR / "skin_signals.onnx"
