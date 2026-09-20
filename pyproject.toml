@@ -11,7 +11,13 @@ dependencies = [
     "onnxruntime>=1.18.0",
     "pillow>=10.2.0",
     "numpy>=1.26.0",
-    "opencv-python-headless>=4.9.0.80",
+    # NOTE: only ONE opencv build may be installed. skin-tone-classifier
+    # requires opencv-python (full), so headless is deliberately NOT listed:
+    # installing both overwrites cv2 files and breaks CascadeClassifier.
+    # Pinned to 4.x: opencv 5.x removed CascadeClassifier, which stone and
+    # the face-aware tone crop depend on.
+    # (Linux slim images may need libgl1 for the full build.)
+    "opencv-python>=4.9.0.80,<5",
     "pydantic>=2.7.0",
     "python-dotenv>=1.0.0",
     "requests>=2.31.0",
