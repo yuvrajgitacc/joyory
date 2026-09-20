@@ -1,3 +1,4 @@
+import io
 import json
 import logging
 from typing import Dict, Any, Optional
@@ -5,38 +6,28 @@ from config import GEMINI_API_KEY, GEMINI_MODEL_NAME
 
 logger = logging.getLogger("narrator_agent")
 
-NARRATOR_SYSTEM_PROMPT = """You are Joyory's empathetic, highly knowledgeable personal beauty & skincare advisor.
-When reviewing facial scan telemetry from our vision models, speak in a gentle, conversational Hinglish/approachable tone (the natural way people talk about skincare in India).
+NARRATOR_SYSTEM_PROMPT = """You are Joyory's expert personal beauty and skincare advisor.
+Your job is to explain what was detected on their skin, WHY it happens (root cause), and what REMEDIES (active ingredients, moisturizers, and care habits) they need, speaking in warm, approachable, natural Hinglish (Hindi written in English alphabets, just like how skincare experts converse in India).
 
-STRICT CRITICAL RULES:
-- ONLY talk about what is actually present in the scan telemetry.
-- DO NOT assume or invent specific face parts like Forehead, Chin, or T-Zone UNLESS specifically noted. The user might have uploaded a cheek crop or localized skin area. Keep your focus strictly on the scanned skin region!
-- Structure your response naturally with these points:
-  1. Honest disclaimer:
-     "Photo/scan ke basis par exact medical diagnosis toh nahi kar sakte, but visual analysis ke according:"
-  2. Blemish & Pore Observation:
-     Describe the detected spots ({total_lesions} active lesions: {comedones} micro-comedones, {papules} surface bumps/papules).
-  3. Hydration & Skin Barrier:
-     Explain what the hydration index ({hydration_score}/100) means for their moisture barrier.
-  4. Texture & Marks:
-     Discuss the smoothness score ({texture_score}/100) and any post-acne marks or tone clarity.
-  5. Overall Assessment:
-     e.g., "Overall skin {severity} {skin_type} acne-prone lag rahi hai; severe ya cystic jaisa kuch obvious nahi hai."
-  6. Camera Lighting Note:
-     "Camera lighting aur angle se appearance thoda change ho sakta hai."
-  7. Warm Encouraging Transition:
-     "Isi analysis ke basis par neeche humne aapke liye complete Morning & Night routine formulate ki hai with authentic Joyory products!"
-
-STRICT SAFETY RULES:
-- NEVER diagnose diseases or use scary clinical jargon (no "melasma", "rosacea", "pathology", "disease").
-- Keep it supportive, clear, relatable, and grounded in the numbers provided.
+CRITICAL FORMATTING & LANGUAGE RULES:
+- Strictly write in natural, conversational Hinglish (e.g., 'Aapke skin scan ke according...', 'Yeh isliye hota hai kyunki...'). Do NOT output pure English.
+- DO NOT use robotic numbered template headings like '1. Honest disclaimer', '2. Blemish observation', or '6. Camera lighting note'.
+- Structure your response cleanly using EXACTLY these 3 markdown headings:
+  * **Kya Dikh Raha Hai (Scan Observations):** State clearly what the scan shows (exact blemish/spots count, clogged pores, hydration index, texture status).
+  * **Yeh Kyun Hota Hai (Root Cause):** Explain simply why this happens (barrier dehydration causing rebound sebum/oil production, dead skin cells clogging pores, and lingering post-blemish marks).
+  * **Remedies & Kya Karna Chahiye (Actionable Skincare Solutions):** Give concrete ingredient and product guidance:
+    - Deep pore cleansing with gentle Salicylic Acid (BHA).
+    - Barrier replenishment with a lightweight, non-comedogenic moisturizer containing Ceramides and Hyaluronic Acid.
+    - Soothing active bumps and marks with Niacinamide.
+    - Daily broad-spectrum gel/matte SPF.
+- End on a warm, empowering note connecting directly to the personalized Joyory morning and night routine curated below!
 """
 
 class NarratorAgent:
     """
-    Gemini-Powered Natural Language Skin Condition Narrator.
+    Gemini-Powered Natural Language Skincare Advisor.
     Translates raw neural network measurements (ONNX blemish counts, skin signals, tone)
-    into an empathetic, conversational, highly relatable personal skin summary.
+    into an empathetic, actionable consultation with root-cause explanations and remedies.
     """
     def __init__(self):
         self.model_name = GEMINI_MODEL_NAME or "gemini-3.1-flash-lite"
@@ -45,17 +36,20 @@ class NarratorAgent:
         self,
         vision_result: Dict[str, Any],
         skin_type: Optional[str] = None,
-        concerns: Optional[list] = None
+        concerns: Optional[list] = None,
+        image_bytes: Optional[bytes] = None,
+        scan_mode: str = "normal"
     ) -> str:
         """
-        Generates human-like conversational skin overview based on raw model outputs.
+        Generates actionable conversational skin overview based on raw model outputs.
+        - scan_mode == 'normal': Gemini receives model telemetry only (no image).
+        - scan_mode == 'advance': Gemini receives image bytes + telemetry for deep visual multimodal consultation.
         """
         skin_tone = vision_result.get("skin_tone", {})
         signals = vision_result.get("skin_signals", {})
         acne = vision_result.get("blemish_assessment", {})
         user_skin_type = skin_type or vision_result.get("skin_type", "Combination")
         user_concerns = concerns or vision_result.get("primary_concerns", ["Acne & Blemishes", "Sun Protection"])
-        focus_areas = vision_result.get("focus_areas", ["Scanned Skin Region"])
 
         total_lesions = acne.get("total_lesions", 0)
         comedones = acne.get("comedones", 0)
@@ -78,8 +72,7 @@ class NarratorAgent:
                 papules=papules,
                 severity=severity,
                 hydration=hydration_score,
-                texture=texture_score,
-                focus_areas=focus_areas
+                texture=texture_score
             )
 
         try:
@@ -89,37 +82,50 @@ class NarratorAgent:
             client = genai.Client(api_key=GEMINI_API_KEY)
 
             user_prompt = f"""
-Here is the exact diagnostic telemetry from our local vision models:
-- Dominant Skin Profile: {user_skin_type}
-- Skin Tone Index: {skin_tone.get('label', 'Warm Tone')} (Hex: {skin_tone.get('hex', '#d2a07c')})
+Customer Diagnostic Telemetry from Vision Models:
+- Skin Type Profile: {user_skin_type}
+- Skin Tone: {skin_tone.get('label', 'Warm Tone')} (Hex: {skin_tone.get('hex', '#d2a07c')})
 - Quantitative Skin Signals:
   * Texture Smoothness: {texture_score}/100
-  * Moisture Hydration: {hydration_score}/100
+  * Moisture Hydration Index: {hydration_score}/100
   * Sun Clarity Index: {sun_score}/100
   * Elasticity Tension: {firmness_score}/100
-- Visible Blemishes in Scanned Area:
+- Detected Blemishes in Scanned Area:
   * Total Active Spots: {total_lesions}
-  * Micro-comedones (pore congestion): {comedones}
+  * Micro-comedones (clogged pores): {comedones}
   * Surface Papules (active bumps): {papules}
   * Overall Blemish Severity: {severity}
-- Priority Concerns: {', '.join(user_concerns)}
+- Priority Focus: {', '.join(user_concerns)}
 
-Write the structured conversational skin breakdown. Remember: DO NOT assume or mention forehead or chin unless it was part of the scan telemetry. Focus strictly on the scanned skin!
+Write the consultation in natural conversational Hinglish following the 3 sections:
+**Kya Dikh Raha Hai (Scan Observations)**
+**Yeh Kyun Hota Hai (Root Cause)**
+**Remedies & Kya Karna Chahiye (Actionable Skincare Solutions)**
+Include why this happens, what moisturizer/ingredients to use, and connect to the Joyory routine below.
 """
+
+            contents = []
+            if scan_mode == "advance" and image_bytes:
+                # Advance mode: Include direct image pixels for multimodal visual confirmation
+                contents.append(types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"))
+                contents.append("Perform an advanced multimodal visual inspection of this selfie alongside the telemetry:\n" + user_prompt)
+            else:
+                # Standard mode: Gemini receives only model telemetry
+                contents.append(user_prompt)
 
             response = client.models.generate_content(
                 model=self.model_name,
-                contents=[user_prompt],
+                contents=contents,
                 config=types.GenerateContentConfig(
                     system_instruction=NARRATOR_SYSTEM_PROMPT,
                     temperature=0.3,
-                    max_output_tokens=1000
+                    max_output_tokens=1500
                 )
             )
 
             if response and response.text:
                 cleaned_text = response.text.strip()
-                logger.info(f"Successfully generated Gemini narrative ({len(cleaned_text)} chars).")
+                logger.info(f"Successfully generated Gemini narrative ({len(cleaned_text)} chars, mode={scan_mode}).")
                 return cleaned_text
 
         except Exception as e:
@@ -133,8 +139,7 @@ Write the structured conversational skin breakdown. Remember: DO NOT assume or m
             papules=papules,
             severity=severity,
             hydration=hydration_score,
-            texture=texture_score,
-            focus_areas=focus_areas
+            texture=texture_score
         )
 
     def _generate_fallback_narrative(
@@ -146,20 +151,23 @@ Write the structured conversational skin breakdown. Remember: DO NOT assume or m
         papules: int,
         severity: str,
         hydration: float,
-        texture: float,
-        focus_areas: list
+        texture: float
     ) -> str:
         """
-        Empathetic conversational fallback matching the exact requested breakdown without assumptions.
+        Actionable conversational fallback with root cause and remedies.
         """
         lines = [
-            "Photo/scan ke basis par exact medical diagnosis toh nahi kar sakte, but visual analysis ke according:\n",
-            f"• Active Blemishes & Pores: Scanned region mein lagbhag {total_lesions} visible spots detect hue hain ({comedones} micro-comedones aur {papules} active bumps), jisse surface texture par dhyan dene ki zaroorat hai.",
-            f"• Hydration & Moisture Barrier: Skin ka moisture index {int(hydration)}/100 hai — barrier ko extra hydration aur calming nourishment chahiye.",
-            f"• Surface Smoothness: Texture score {int(texture)}/100 par calibrated hai; halkey post-acne marks aur unevenness notice ho sakti hai.",
-            f"• Overall Assessment: Skin {severity.lower()} {skin_type.lower()} stage mein hai. Severe ya cystic jaisa kuch nahi hai, bas gentle consistent care chahiye.",
-            "• Camera Lighting Note: Lighting conditions aur angle se actual tone mein thoda variation aa sakta hai.\n",
-            "Neeche humne aapke isi scan ke basis par personalized Joyory Morning & Night routine select ki hai!"
+            "Hello! Main hoon aapki Joyory personal skincare advisor.\n",
+            "**Kya Dikh Raha Hai (Scan Observations)**",
+            f"Aapke scan mein lagbhag {total_lesions} active blemish spots detect hue hain ({comedones} micro-comedones aur {papules} active bumps). Aapka hydration score {int(hydration)}/100 hai, jo dikhata hai ki moisture barrier thirsty hai, aur texture score {int(texture)}/100 par calibrated hai.\n",
+            "**Yeh Kyun Hota Hai (Root Cause)**",
+            "Jab skin ka moisture barrier dehydrated hota hai, toh skin dryness se ladne ke liye extra sebum (oil) produce karne lagti hai. Yeh excess oil jab dead cells ke saath milta hai, toh pores clog ho jaate hain aur bumps banne lagte hain. Isliye skin ko aggressively dry karne ke bajaye balanced hydration dena zaroori hai.\n",
+            "**Remedies & Kya Karna Chahiye (Actionable Skincare Solutions)**",
+            "• **Pore Cleansing:** Salicylic Acid (BHA) cleanser use karein jo pores ke andar jakar excess sebum dissolve kare.",
+            "• **Hydration & Barrier Healing:** Lightweight, non-comedogenic Ceramide & Hyaluronic Acid moisturizer zaroor lagayein.",
+            "• **Calming Marks:** Niacinamide serum active bumps ko soothe karega aur purane marks ko fade karega.",
+            "• **Daily Sunscreen:** Broad-spectrum SPF daily lagayein taaki spots dark na hon.\n",
+            "Aapke isi telemetry ke basis par neeche humne complete Joyory Morning & Night routine select ki hai!"
         ]
         return "\n".join(lines)
 

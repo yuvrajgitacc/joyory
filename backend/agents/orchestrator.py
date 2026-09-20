@@ -49,7 +49,9 @@ class AgentOrchestrator:
         narrator_description = await narrator_agent.generate_description(
             vision_result=vision_result,
             skin_type=skin_type,
-            concerns=concerns
+            concerns=concerns,
+            image_bytes=image_bytes,
+            scan_mode=scan_mode
         )
         vision_result["narrator_description"] = narrator_description
 
