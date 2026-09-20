@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Sparkles, Camera, UploadCloud, Sliders, ShieldCheck, ArrowRight, Loader2, Zap } from 'lucide-react';
+import { Sparkles, UploadCloud, Sliders, ShieldCheck, ArrowRight, Loader2, Zap } from 'lucide-react';
 import FileUpload from '../components/FileUpload';
-import CameraCapture from '../components/CameraCapture';
 
 export default function AnalyzePage({ onAnalysisComplete }) {
-  const [inputMode, setInputMode] = useState('upload'); // 'upload' | 'camera'
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [budget, setBudget] = useState('all');
@@ -121,49 +119,12 @@ export default function AnalyzePage({ onAnalysisComplete }) {
         </p>
       </div>
 
-      {/* Mode selection tabs */}
-      <div className="flex justify-center">
-        <div className="bg-slate-900/80 p-1 rounded-2xl border border-slate-800 flex gap-1">
-          <button
-            type="button"
-            onClick={() => setInputMode('upload')}
-            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-              inputMode === 'upload'
-                ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            <UploadCloud className="w-4 h-4" />
-            <span>Upload Photo</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setInputMode('camera')}
-            className={`px-5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-              inputMode === 'camera'
-                ? 'bg-rose-500 text-white shadow-md shadow-rose-500/20'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            <Camera className="w-4 h-4" />
-            <span>Live Camera</span>
-          </button>
-        </div>
-      </div>
-
       {/* Input section */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-md">
-        {inputMode === 'upload' ? (
-          <FileUpload 
-            onFileSelected={handleFileSelected} 
-            previewUrl={previewUrl}
-          />
-        ) : (
-          <CameraCapture 
-            onCapture={handleFileSelected} 
-            previewUrl={previewUrl}
-          />
-        )}
+        <FileUpload 
+          onFileSelected={handleFileSelected} 
+          previewUrl={previewUrl}
+        />
 
         {/* Demo pitch presets */}
         <div className="mt-6 pt-5 border-t border-slate-800/80">
