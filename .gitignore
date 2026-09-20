@@ -47,8 +47,7 @@ backend/temp_tone_eval.jpg
 *.tmp
 *.log
 
-# Local ML eval reports & large local-only weights
+# Local ML eval reports (large trained weights ARE committed: ~20 MB each,
+# well under GitHub's 100 MB per-file limit, same as acne_detector.onnx)
 backend/eval_reports/
-backend/models/derm_*.onnx
-backend/models/*.pt
 *.onnx.data
