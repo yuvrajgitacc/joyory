@@ -1,5 +1,5 @@
 import React from 'react';
-import { Droplet, Sparkles, Sun, Activity, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Droplet, Sparkles, Sun, Activity, CheckCircle2, AlertCircle, Info } from 'lucide-react';
 
 export default function SkinMetricsCard({ visionData }) {
   if (!visionData) return null;
@@ -9,34 +9,34 @@ export default function SkinMetricsCard({ visionData }) {
   const metrics = [
     {
       key: 'texture_score',
-      label: 'Surface Texture',
-      sub: 'Pore clarity & smoothness',
-      score: skin_signals?.texture_score ?? 70,
+      label: 'AI-Estimated Texture',
+      sub: 'Relative smoothness index',
+      score: Math.round(skin_signals?.texture_score ?? 70),
       icon: Sparkles,
       color: 'from-cyan-400 to-blue-500'
     },
     {
       key: 'hydration_score',
-      label: 'Hydration Signal',
-      sub: 'Moisture barrier appearance',
-      score: skin_signals?.hydration_score ?? 60,
+      label: 'AI-Estimated Hydration',
+      sub: 'Surface moisture reflection',
+      score: Math.round(skin_signals?.hydration_score ?? 60),
       icon: Droplet,
       color: 'from-blue-400 to-indigo-500'
     },
     {
       key: 'sun_exposure_score',
-      label: 'Clarity Index',
-      sub: 'Photo-damage & tone uniformity',
-      score: skin_signals?.sun_exposure_score ?? 35,
+      label: 'AI-Estimated Clarity',
+      sub: 'Photoprotection priority',
+      score: Math.round(skin_signals?.sun_exposure_score ?? 35),
       icon: Sun,
       color: 'from-amber-400 to-orange-500',
       invertNote: 'Lower = Less apparent sun damage'
     },
     {
       key: 'firmness_score',
-      label: 'Elasticity Balance',
+      label: 'AI-Estimated Elasticity',
       sub: 'Visible epidermal tension',
-      score: skin_signals?.firmness_score ?? 80,
+      score: Math.round(skin_signals?.firmness_score ?? 80),
       icon: Activity,
       color: 'from-emerald-400 to-teal-500'
     }
@@ -58,12 +58,19 @@ export default function SkinMetricsCard({ visionData }) {
         {/* Skin Tone & Undertone Pill */}
         <div className="flex items-center gap-3 bg-slate-950/80 px-4 py-2.5 rounded-xl border border-slate-800">
           <div 
-            className="w-6 h-6 rounded-full border-2 border-white/40 shadow-sm"
+            className="w-6 h-6 rounded-full border-2 border-white/40 shadow-sm flex-shrink-0"
             style={{ backgroundColor: skin_tone?.hex || '#d2a07c' }}
           />
           <div className="text-left text-xs">
-            <p className="font-semibold text-white">{skin_tone?.fitzpatrick || 'Type IV'}</p>
-            <p className="text-slate-400 font-mono text-[11px]">{skin_tone?.hex || '#d2a07c'} • Monk {skin_tone?.monk_scale || 6}</p>
+            <div className="flex items-center gap-1.5">
+              <span className="font-semibold text-white">{skin_tone?.fitzpatrick || 'Type IV'}</span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400 font-medium">
+                Lighting Dependent
+              </span>
+            </div>
+            <p className="text-slate-400 font-mono text-[11px] mt-0.5">
+              {skin_tone?.hex || '#d2a07c'} • Monk {skin_tone?.monk_scale || 6}
+            </p>
           </div>
         </div>
       </div>
@@ -77,12 +84,12 @@ export default function SkinMetricsCard({ visionData }) {
 
       {/* 4 Quantitative Image-Derived Signals */}
       <div>
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
           <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-            Image-Derived Visual Signals (0 - 100 Scale)
+            Image-Derived Visual Signals (0 - 100 Relative Scale)
           </h4>
           <span className="text-[11px] text-slate-400 font-normal">
-            *Calibrated via neural feature extraction
+            *Relative cosmetic indices computed from camera pixel heuristics (Not clinical lab tests)
           </span>
         </div>
 
@@ -141,19 +148,24 @@ export default function SkinMetricsCard({ visionData }) {
         {/* Blemish Count */}
         <div className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 flex items-center justify-between">
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-              Blemish Assessment
-            </h5>
+            <div className="flex items-center gap-1.5 mb-1">
+              <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                Blemish Assessment
+              </h5>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-400">
+                Conf &gt; 0.45
+              </span>
+            </div>
             <p className="text-sm font-medium text-slate-300">
               Severity: <strong className="text-amber-300">{blemish_assessment?.severity || 'Mild'}</strong>
             </p>
             <p className="text-xs text-slate-400 mt-0.5">
-              Comedones: {blemish_assessment?.comedones || 2} • Papules: {blemish_assessment?.papules || 1}
+              Comedones: {blemish_assessment?.comedones || 0} • Papules: {blemish_assessment?.papules || 0}
             </p>
           </div>
           <div className="text-right">
             <span className="text-3xl font-black font-mono text-white">
-              {blemish_assessment?.total_lesions ?? 3}
+              {blemish_assessment?.total_lesions ?? 0}
             </span>
             <p className="text-[11px] text-slate-400">active spots</p>
           </div>

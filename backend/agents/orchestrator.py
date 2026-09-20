@@ -30,8 +30,17 @@ class AgentOrchestrator:
 
         # Step 1: Vision Module (Tone + ONNX Signals + Cosmetic Classification)
         vision_result = await vision_agent.analyze(image_bytes)
+        if vision_result.get("status") == "error":
+            return {
+                "status": "error",
+                "error_code": vision_result.get("error_code", "OOD_REJECTED"),
+                "message": vision_result.get("message", "Invalid image detected. Please provide a clear facial photo."),
+                "disclaimer": "This analysis identifies visible skin characteristics for cosmetic skincare guidance. It is not a medical diagnosis."
+            }
+
         skin_type = user_override_skin_type if user_override_skin_type else vision_result.get("skin_type", "Combination")
         concerns = vision_result.get("primary_concerns", ["Acne & Blemishes", "Sun Protection"])
+
 
         # Step 2: Gemini Narrator Agent (Warm, human conversational description based on raw model numbers)
         narrator_description = await narrator_agent.generate_description(

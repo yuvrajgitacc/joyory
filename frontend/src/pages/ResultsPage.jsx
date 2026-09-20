@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ShoppingBag, Calendar, ArrowLeft, RefreshCw, Layers, CheckCircle2, ShieldCheck, Lightbulb } from 'lucide-react';
+import { Sparkles, ShoppingBag, Calendar, ArrowLeft, RefreshCw, Layers, CheckCircle2, ShieldCheck, Lightbulb, ShieldAlert } from 'lucide-react';
 import SkinMetricsCard from '../components/SkinMetricsCard';
 import ProductCard from '../components/ProductCard';
 import RoutineTimeline from '../components/RoutineTimeline';
@@ -36,7 +36,7 @@ export default function ResultsPage({ analysisResult, onResetScan }) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Top Action Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
@@ -71,11 +71,21 @@ export default function ResultsPage({ analysisResult, onResetScan }) {
         </div>
       </div>
 
+      {/* Universal Safety & Non-Medical Disclaimer Banner */}
+      <div className="rounded-2xl bg-amber-950/20 border border-amber-500/30 px-5 py-3.5 flex items-start gap-3 text-xs text-amber-200/90 shadow-sm">
+        <ShieldAlert className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+        <div className="leading-relaxed">
+          <strong className="text-amber-300 font-semibold">AI Estimation Only (Not a Medical Diagnosis):</strong>{' '}
+          All skin signal scores, blemish assessments, and tone indices are relative cosmetic estimations derived from 2D camera pixels. Results are lighting-dependent and do not constitute clinical dermatology advice. Consult a certified medical dermatologist for persistent or inflamed skin conditions.
+        </div>
+      </div>
+
       {/* Gemini Human Narrative Card */}
       <NarratorCard 
         narrativeText={narrator_description || vision?.narrator_description} 
         skinType={vision?.skin_type} 
       />
+
 
       {/* Sub-tab Navigation */}
       <div className="flex overflow-x-auto pb-2 gap-2 border-b border-slate-800 text-xs font-bold">

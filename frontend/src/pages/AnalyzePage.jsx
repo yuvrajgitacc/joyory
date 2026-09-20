@@ -83,19 +83,24 @@ export default function AnalyzePage({ onAnalysisComplete }) {
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error(`Server returned error ${response.status}`);
+      const data = await response.json();
+
+      if (!response.ok || data.status === 'error') {
+        const detailMsg = data.message || data.detail || `Server returned error ${response.status}`;
+        setErrorMessage(detailMsg);
+        setIsScanning(false);
+        return;
       }
 
-      const data = await response.json();
       onAnalysisComplete(data);
     } catch (err) {
       console.error("API error:", err);
-      setErrorMessage("Could not reach backend API. Ensure FastAPI is running on port 8000.");
+      setErrorMessage(err.message || "Could not reach backend API. Ensure FastAPI is running on port 8000.");
     } finally {
       setIsScanning(false);
       setScanStep('');
     }
+
   };
 
   return (
