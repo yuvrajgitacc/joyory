@@ -259,8 +259,10 @@ class VisionAgent:
         a = 500 * (f(x) - f(y))
         bb = 200 * (f(y) - f(z))
         import math
-        if abs(bb) < 1e-6:
-            return 0.0
+        chroma = math.hypot(a, bb)
+        if chroma < 5.0:
+            # Near-neutral gray: ITA is unstable (division by ~zero chroma).
+            return None
         return round(math.degrees(math.atan((l - 50) / bb)), 1)
 
     def extract_skin_tone_v2(self, pil_image: Image.Image) -> Dict[str, Any]:
@@ -290,8 +292,19 @@ class VisionAgent:
 
         stone_match = None
         try:
+            import tempfile
+
             import stone as stone_lib  # type: ignore
-            res = stone_lib.process(np.array(face.convert("RGB")))
+            with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
+                face.convert("RGB").save(tmp.name, format="JPEG")
+                tmp_path = tmp.name
+            try:
+                res = stone_lib.process(tmp_path)
+            finally:
+                try:
+                    os.remove(tmp_path)
+                except OSError:
+                    pass
             if isinstance(res, dict):
                 faces = res.get("faces") or []
                 if faces:
@@ -306,7 +319,7 @@ class VisionAgent:
             "hex": hex_code,
             "monk_scale": monk,
             "ita_angle": ita,
-            "label": f"Monk {monk} / ITA {ita}",
+            "label": f"Monk {monk}" + (f" / ITA {ita}" if ita is not None else " (ITA unstable: low chroma)"),
             "face_crop_applied": face is not pil_image,
             "skin_pixel_ratio": round(float(np.count_nonzero(skin_mask)) / float(balanced.shape[0] * balanced.shape[1]), 3),
             "stone_cross_check": stone_match,
