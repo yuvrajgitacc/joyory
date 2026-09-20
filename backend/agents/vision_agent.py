@@ -15,6 +15,40 @@ from config import (
 
 logger = logging.getLogger("vision_agent")
 
+# ---------------------------------------------------------------------------
+# ML audit constants (see backend/ML_AUDIT.md)
+# - ACNE_CONF_THRESHOLD is the single source of truth for the YOLOv8 acne
+#   detector. It is used for filtering AND reported in API responses.
+#   Previous code filtered at 0.38 while reporting 0.45.
+# - SIGNALS_* describe the preprocessing required by the Glowlytics
+#   skin_signals EfficientNet-B0 ONNX model card: Resize(256) ->
+#   CenterCrop(224) -> ImageNet normalize. Previous code skipped the
+#   normalization, which silently shifted all four signal scores.
+# ---------------------------------------------------------------------------
+ACNE_CONF_THRESHOLD = 0.45
+ACNE_NMS_IOU = 0.45
+ACNE_PAPULE_SPLIT = 0.55
+
+SIGNALS_SIZE = 224
+SIGNALS_RESIZE = 256
+SIGNALS_MEAN = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+SIGNALS_STD = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+
+# Monk Skin Tone (MST) scale reference swatches, light (1) -> deep (10).
+# Source: https://skintone.google (Dr. Ellis Monk, open CC BY 4.0 scale).
+MONK_SWATCHES = [
+    "#f3e7db",  # MST 1
+    "#f0dcc8",  # MST 2
+    "#e8c39e",  # MST 3
+    "#d6a57c",  # MST 4
+    "#b47e5c",  # MST 5
+    "#8c5a3b",  # MST 6
+    "#6b4226",  # MST 7
+    "#4e2e1e",  # MST 8
+    "#382114",  # MST 9
+    "#241612",  # MST 10
+]
+
 # Strict, non-medical cosmetic concern enum
 ALLOWED_COSMETIC_CONCERNS = [
     "Acne & Blemishes",
@@ -66,8 +100,15 @@ class VisionAgent:
         try:
             import onnxruntime as ort
             if os.path.exists(ONNX_SIGNALS_PATH):
-                self.signals_session = ort.InferenceSession(str(ONNX_SIGNALS_PATH), providers=['CPUExecutionProvider'])
-                logger.info("Loaded skin_signals ONNX session.")
+                try:
+                    self.signals_session = ort.InferenceSession(str(ONNX_SIGNALS_PATH), providers=['CPUExecutionProvider'])
+                    logger.info("Loaded skin_signals ONNX session.")
+                except Exception as e:
+                    # Known issue (ML audit): the upstream glowlytics-skin-models
+                    # skin_signals.onnx references an external data file that is
+                    # not published on Hugging Face, so it cannot load. The
+                    # pipeline intentionally falls back to vision heuristics.
+                    logger.warning(f"skin_signals ONNX unloadable ({e}). Using vision heuristics; see backend/ML_AUDIT.md.")
         except Exception as e:
             logger.warning(f"skin_signals ONNX note: {e}. Will use robust vision heuristics.")
 
@@ -89,7 +130,7 @@ class VisionAgent:
 
         # 1. Dimension check
         if h < 150 or w < 150:
-            return False, "Image resolution too low for clinical AI skin analysis (minimum 150x150 required)."
+            return False, "Image resolution too low for cosmetic AI skin analysis (minimum 150x150 required)."
 
         # 2. Flat / Blank image check
         std_color = np.std(img_rgb)
@@ -155,19 +196,143 @@ class VisionAgent:
             "lighting_note": "Tone estimation is ambient lighting-dependent. Optimal accuracy under natural indirect daylight."
         }
 
+    # -- ML audit additions: face-aware, illumination-normalized tone (v2) --
+    def _face_aware_crop(self, pil_image: Image.Image) -> Image.Image:
+        """Crop to the largest detected face; fall back to center crop.
+
+        Uses the OpenCV Haar cascade (already a backend dependency) so no
+        new runtime requirement is introduced. Never raises: any failure
+        returns the original image.
+        """
+        try:
+            import cv2
+            img_np = np.array(pil_image.convert("RGB"))
+            gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
+            cascade_path = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+            detector = cv2.CascadeClassifier(cascade_path)
+            faces = detector.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(90, 90))
+            if len(faces) > 0:
+                x, y, w, h = max(faces, key=lambda b: b[2] * b[3])
+                pad = int(0.1 * max(w, h))
+                x0, y0 = max(0, x - pad), max(0, y - pad)
+                x1, y1 = x + w + pad, y + h + pad
+                return pil_image.crop((x0, y0, x1, y1))
+        except Exception as e:
+            logger.debug(f"Face crop unavailable, using full frame: {e}")
+        return pil_image
+
+    @staticmethod
+    def _gray_world_balance(img_np: np.ndarray) -> np.ndarray:
+        """Simple gray-world white balance to reduce illuminant bias."""
+        arr = img_np.astype(np.float32)
+        means = arr.reshape(-1, 3).mean(axis=0)
+        gray = means.mean()
+        gains = np.clip(gray / np.clip(means, 1e-3, None), 0.6, 1.6)
+        return np.clip(arr * gains, 0, 255)
+
+    @staticmethod
+    def _nearest_monk(hex_code: str) -> int:
+        """Nearest Monk (1-10) swatch by Euclidean RGB distance."""
+        r, g, b = int(hex_code[1:3], 16), int(hex_code[3:5], 16), int(hex_code[5:7], 16)
+        best, best_d = 1, float("inf")
+        for i, sw in enumerate(MONK_SWATCHES, start=1):
+            sr, sg, sb = int(sw[1:3], 16), int(sw[3:5], 16), int(sw[5:7], 16)
+            d = (r - sr) ** 2 + (g - sg) ** 2 + (b - sb) ** 2
+            if d < best_d:
+                best, best_d = i, d
+        return best
+
+    @staticmethod
+    def _ita_angle(r: float, g: float, b: float) -> float:
+        """Individual Typology Angle from sRGB (colorimetry-based tone metric)."""
+        # sRGB -> linear -> XYZ (D65) -> CIELAB, then ITA = atan((L*-50)/b*)*180/pi
+        def lin(c):
+            c = c / 255.0
+            return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+        rl, gl, bl = lin(r), lin(g), lin(b)
+        x = (rl * 0.4124 + gl * 0.3576 + bl * 0.1805) / 0.95047
+        y = rl * 0.2126 + gl * 0.7152 + bl * 0.0722
+        z = (rl * 0.0193 + gl * 0.1192 + bl * 0.9505) / 1.08883
+        def f(t):
+            return t ** (1 / 3) if t > 0.008856 else 7.787 * t + 16 / 116
+        l = 116 * f(y) - 16
+        a = 500 * (f(x) - f(y))
+        bb = 200 * (f(y) - f(z))
+        import math
+        if abs(bb) < 1e-6:
+            return 0.0
+        return round(math.degrees(math.atan((l - 50) / bb)), 1)
+
+    def extract_skin_tone_v2(self, pil_image: Image.Image) -> Dict[str, Any]:
+        """Face-aware, white-balanced tone estimate (additive; v1 untouched).
+
+        Combines: Haar face crop -> gray-world balance -> YCrCb skin-mask
+        weighted average -> nearest Monk swatch + ITA angle + optional
+        `stone` (skin-tone-classifier) palette cross-check when installed.
+        """
+        face = self._face_aware_crop(pil_image)
+        img_np = np.array(face.convert("RGB"))
+        balanced = self._gray_world_balance(img_np)
+
+        r = balanced[..., 0].astype(np.float32)
+        g = balanced[..., 1].astype(np.float32)
+        b = balanced[..., 2].astype(np.float32)
+        y = 0.299 * r + 0.587 * g + 0.114 * b
+        cr = (r - y) * 0.713 + 128.0
+        cb = (b - y) * 0.564 + 128.0
+        skin_mask = (cr >= 130) & (cr <= 180) & (cb >= 75) & (cb <= 135) & (y >= 40)
+        pixels = balanced[skin_mask] if np.count_nonzero(skin_mask) > 100 else balanced.reshape(-1, 3)
+        avg = pixels.reshape(-1, 3).mean(axis=0)
+        ar, ag, ab = float(avg[0]), float(avg[1]), float(avg[2])
+        hex_code = f"#{int(ar):02x}{int(ag):02x}{int(ab):02x}"
+        monk = self._nearest_monk(hex_code)
+        ita = self._ita_angle(ar, ag, ab)
+
+        stone_match = None
+        try:
+            import stone as stone_lib  # type: ignore
+            res = stone_lib.process(np.array(face.convert("RGB")))
+            if isinstance(res, dict):
+                faces = res.get("faces") or []
+                if faces:
+                    stone_match = {
+                        "skin_tone": faces[0].get("skin_tone"),
+                        "tone_label": faces[0].get("tone_label"),
+                    }
+        except Exception as e:
+            logger.debug(f"stone cross-check skipped: {e}")
+
+        return {
+            "hex": hex_code,
+            "monk_scale": monk,
+            "ita_angle": ita,
+            "label": f"Monk {monk} / ITA {ita}",
+            "face_crop_applied": face is not pil_image,
+            "skin_pixel_ratio": round(float(np.count_nonzero(skin_mask)) / float(balanced.shape[0] * balanced.shape[1]), 3),
+            "stone_cross_check": stone_match,
+            "lighting_dependent": True,
+            "lighting_note": "White-balanced estimate; still ambient lighting-dependent. Confirm under natural indirect daylight.",
+        }
+
     def compute_skin_signals(self, pil_image: Image.Image) -> Dict[str, Any]:
         """
         Computes 4 normalized image-based skin signal scores as clean integers (0-100).
         Framed as relative AI-estimated indices.
         """
-        # Run ONNX if loaded
+        # Run ONNX if loaded (preprocessing per model card: Resize(256) ->
+        # CenterCrop(224) -> ImageNet normalize; outputs may be 0-1 or 0-100)
         if self.signals_session:
             try:
-                resized = pil_image.resize((224, 224))
-                arr = np.array(resized, dtype=np.float32) / 255.0
-                arr = np.transpose(arr, (2, 0, 1))[np.newaxis, ...] # NCHW
+                resized = pil_image.convert("RGB").resize((SIGNALS_RESIZE, SIGNALS_RESIZE))
+                left = (SIGNALS_RESIZE - SIGNALS_SIZE) // 2
+                cropped = resized.crop((left, left, left + SIGNALS_SIZE, left + SIGNALS_SIZE))
+                arr = np.array(cropped, dtype=np.float32) / 255.0
+                arr = (arr - SIGNALS_MEAN) / SIGNALS_STD
+                arr = np.transpose(arr, (2, 0, 1))[np.newaxis, ...]  # NCHW
                 input_name = self.signals_session.get_inputs()[0].name
-                raw_out = self.signals_session.run(None, {input_name: arr})[0][0]
+                raw_out = np.array(self.signals_session.run(None, {input_name: arr})[0][0], dtype=float)
+                if raw_out.max() <= 1.5:  # sigmoid 0-1 outputs -> scale to 0-100
+                    raw_out = raw_out * 100.0
 
                 return {
                     "texture_score": int(round(max(15, min(95, float(raw_out[0]))))),
@@ -202,8 +367,11 @@ class VisionAgent:
 
     def detect_acne_lesions(self, pil_image: Image.Image) -> Dict[str, Any]:
         """
-        Estimates visible blemish counts and bounding coordinates with a high-precision 0.45 threshold.
-        Prevents shadows and moles from being misclassified as blemishes.
+        Visible blemish counts and bounding coordinates.
+
+        Uses the single audited ACNE_CONF_THRESHOLD (0.45) for both
+        filtering and reporting, with NMS at ACNE_NMS_IOU. Upper boxes are
+        capped at 8 to keep payloads stable.
         """
         if self.acne_session:
             try:
@@ -214,9 +382,7 @@ class VisionAgent:
                 input_name = self.acne_session.get_inputs()[0].name
                 raw_preds = self.acne_session.run(None, {input_name: arr})[0][0].T # (8400, 5)
 
-                # Production-grade balanced confidence threshold: 0.38
-                # Filters low-confidence shadow noise while reliably detecting true active comedones and papules
-                candidates = raw_preds[raw_preds[:, 4] >= 0.38]
+                candidates = raw_preds[raw_preds[:, 4] >= ACNE_CONF_THRESHOLD]
                 if len(candidates) > 0:
                     boxes = candidates[:, :4]
                     scores = candidates[:, 4]
@@ -240,12 +406,12 @@ class VisionAgent:
                         h = np.maximum(0.0, yy2 - yy1)
                         inter = w * h
                         ovr = inter / (areas[i] + areas[order[1:]] - inter)
-                        inds = np.where(ovr <= 0.35)[0]
+                        inds = np.where(ovr <= ACNE_NMS_IOU)[0]
                         order = order[inds + 1]
 
                     final_lesions = candidates[keep]
                     total_count = len(final_lesions)
-                    papules_count = int(np.sum(final_lesions[:, 4] > 0.55))
+                    papules_count = int(np.sum(final_lesions[:, 4] > ACNE_PAPULE_SPLIT))
                     comedones_count = max(0, total_count - papules_count)
 
                     formatted_boxes = []
@@ -265,7 +431,7 @@ class VisionAgent:
                         "papules": papules_count,
                         "severity": severity,
                         "bounding_boxes": formatted_boxes,
-                        "confidence_threshold": 0.45
+                        "confidence_threshold": ACNE_CONF_THRESHOLD
                     }
                 else:
                     return {
@@ -274,22 +440,20 @@ class VisionAgent:
                         "papules": 0,
                         "severity": "Clear / Mild",
                         "bounding_boxes": [],
-                        "confidence_threshold": 0.45
+                        "confidence_threshold": ACNE_CONF_THRESHOLD
                     }
             except Exception as e:
                 logger.error(f"Acne ONNX inference error: {e}")
 
-        # Baseline detection heuristic
+        # No detector available: report zero instead of inventing lesions.
         return {
-            "total_lesions": 3,
-            "comedones": 2,
-            "papules": 1,
-            "severity": "Mild",
-            "bounding_boxes": [
-                {"zone": "Forehead T-zone", "conf": 0.78},
-                {"zone": "Left Cheek", "conf": 0.65}
-            ],
-            "confidence_threshold": 0.45
+            "total_lesions": 0,
+            "comedones": 0,
+            "papules": 0,
+            "severity": "Unknown (detector unavailable)",
+            "bounding_boxes": [],
+            "confidence_threshold": ACNE_CONF_THRESHOLD,
+            "note": "model_unavailable"
         }
 
     def sanitize_concerns(self, raw_concerns: List[str]) -> List[str]:
@@ -445,8 +609,15 @@ Respond ONLY with a valid JSON object matching this structure:
                 "disclaimer": "This analysis identifies visible skin characteristics for cosmetic skincare guidance. It is not a medical diagnosis."
             }
 
-        # 1. Skin tone (lighting-dependent)
+        # 1. Skin tone (lighting-dependent v1 kept for compatibility)
         tone = self.extract_skin_tone(pil_image)
+
+        # 1b. Skin tone v2 (additive): face-aware + white-balanced + Monk/ITA
+        try:
+            tone_v2 = self.extract_skin_tone_v2(pil_image)
+        except Exception as e:
+            logger.warning(f"tone v2 fallback: {e}")
+            tone_v2 = {"error": str(e)}
 
         # 2. Image-derived skin signals (integer relative indices)
         signals = self.compute_skin_signals(pil_image)
@@ -460,6 +631,7 @@ Respond ONLY with a valid JSON object matching this structure:
         return {
             "status": "success",
             "skin_tone": tone,
+            "skin_tone_v2": tone_v2,
             "skin_signals": signals,
             "blemish_assessment": acne,
             "skin_type": llm_eval.get("skin_type", "Combination"),
