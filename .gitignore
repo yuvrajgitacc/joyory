@@ -49,3 +49,10 @@ backend/temp_tone_eval.jpg
 # Local ML eval reports
 backend/eval_reports/
 *.onnx.data
+
+# joyory-home-design build and cache
+joyory-home-design/.tanstack/
+joyory-home-design/.output/
+joyory-home-design/.wrangler/
+joyory-home-design/dist/
+
