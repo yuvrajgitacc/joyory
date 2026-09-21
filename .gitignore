@@ -45,3 +45,7 @@ temp_tone_eval.jpg
 backend/temp_tone_eval.jpg
 *.tmp
 *.log
+
+# Local ML eval reports
+backend/eval_reports/
+*.onnx.data

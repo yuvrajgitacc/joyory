@@ -6,9 +6,15 @@ skin-tone-classifier
 google-genai
 pillow>=10.2.0
 numpy>=1.26.0
-opencv-python-headless>=4.9.0.80
+# Only one opencv build: stone requires opencv-python (full); headless + full
+# together corrupt cv2 (CascadeClassifier goes missing).
+# Pinned 4.x: opencv 5.x removed CascadeClassifier.
+opencv-python>=4.9.0.80,<5
 pydantic>=2.7.0
 python-dotenv>=1.0.0
 requests
 openai>=1.0.0
-
+# ML audit additions
+torch>=2.2.0
+torchvision>=0.17.0
+huggingface-hub>=0.23.0

@@ -34,3 +34,7 @@ PRODUCTS_FILE = DATA_DIR / "joyory_products.json"
 DATASET_FILE = BASE_DIR.parent / "dataset" / "clean" / "joyory_products_clean.json"
 INGREDIENT_RULES_FILE = DATA_DIR / "ingredient_rules.json"
 
+# Optional research-only derm classifier (default OFF; see agents/derm_agent.py)
+ENABLE_DERM_EXPERIMENTAL = os.getenv("ENABLE_DERM_EXPERIMENTAL", "0") == "1"
+DERM_MODEL_PATH = os.getenv("DERM_MODEL_PATH", str(MODELS_DIR / "derm_ham10000.pt"))
+DERM_HF_MODEL_ID = os.getenv("DERM_HF_MODEL_ID", "")

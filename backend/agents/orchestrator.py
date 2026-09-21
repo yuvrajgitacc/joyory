@@ -8,6 +8,7 @@ from agents.retention_agent import retention_agent
 from agents.progress_agent import progress_agent
 from agents.narrator_agent import narrator_agent
 from agents.grok_recommender_agent import grok_recommender_agent
+from agents.derm_agent import derm_agent
 
 logger = logging.getLogger("orchestrator")
 
@@ -43,7 +44,10 @@ class AgentOrchestrator:
         skin_type = user_override_skin_type if user_override_skin_type else vision_result.get("skin_type", "Combination")
         concerns = vision_result.get("primary_concerns", ["Acne & Blemishes", "Sun Protection"])
 
-
+        # Step 1b: Optional research-only derm assessment (default OFF).
+        # Additive key only; pipeline is unchanged when disabled/unconfigured.
+        derm_assessment = await derm_agent.assess(image_bytes)
+        vision_result["derm_assessment"] = derm_assessment
 
         # Step 2: Gemini Narrator Agent (Warm, human conversational description based on raw model numbers)
         narrator_description = await narrator_agent.generate_description(
@@ -109,6 +113,7 @@ class AgentOrchestrator:
             "status": "success",
             "session_id": session_id,
             "vision": vision_result,
+            "derm_assessment": derm_assessment,
             "narrator_description": narrator_description,
             "recommendations": recommendations,
             "grok_recommendations": grok_analysis,
